@@ -6,7 +6,7 @@
  <meta parent_nodes= ''{}''>
  <meta children_nodes= ''{}'' >
 
-# Cours : Intelligence Artificielle dans les jeux vidéos
+# Cours : Découverte de l'Intelligence Artificielle dans les jeux vidéos
 
 Bienvenue !  
 Vous trouverez sur ce site tous les supports du cours: leçons, exercice et évaluations.
@@ -14,11 +14,12 @@ Vous trouverez sur ce site tous les supports du cours: leçons, exercice et éva
 <br/>
 
 <figure>
-	<a href="https://xkcd.com/1838/"> <img src="https://filedn.eu/lefeldrXcsSFgCcgc48eaLY/images/cours_datascience_IA/machine_learning_2x.png" width="500" height="500"> </a>
-	<figcaption> D'apres la bd en ligne xkcd</figcaption>
+	<a href="https://medium.com/@jjmcarrascosa/ai-in-video-games-a-historical-evolution-from-search-trees-to-llms-chapter-2-1980-2000-341bc31860d9"> <img src="https://filedn.eu/lefeldrXcsSFgCcgc48eaLY/images/cours_datascience_IA/AI_and_videos_games_from_jjmcarrascosca.webp" width="500" height="500"> </a>
+	<figcaption> Auteur: Juan Martinez</figcaption>
 </figure>
 
 <!--
+
 ## Lexique des termes et notions importants
 
 La section **Ressources additionnelles** de ce cours contient un lexique vulgarisé ainsi que de nombreux ressources (cours, vidéos, articles, ... ) que j'ai sélectionné pour vous aider si vous avez besoin d'aller plus loin
