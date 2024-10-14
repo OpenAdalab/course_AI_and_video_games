@@ -18,6 +18,12 @@ Vous trouverez sur ce site tous les supports du cours: leçons, exercice et éva
 	<figcaption> Auteur: Juan Martinez</figcaption>
 </figure>
 
+<!-- Test avec Nextcloud -->
+<!-- <figure>
+	<a href="https://medium.com/@jjmcarrascosa/ai-in-video-games-a-historical-evolution-from-search-trees-to-llms-chapter-2-1980-2000-341bc31860d9"> <img src="https://cloud.marmitejoyeuse.org/index.php/f/102076" width="500" height="500"> </a>
+	<figcaption> Auteur: Juan Martinez</figcaption>
+</figure> -->
+
 <!--
 
 ## Lexique des termes et notions importants

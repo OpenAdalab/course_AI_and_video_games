@@ -1,4 +1,4 @@
-# Plateforme de cours data science & IA
+# Cours Game AI
 
 ## Description
 
@@ -14,6 +14,16 @@ Le site est ensuite généré en utilisant le package `mkdocs` (et quelques plug
 **`site`**: contient les fichiers du site généré par mkdocs, dossier qui sera utilisé pour mettre le site en ligne.  
 **`mkdocs.yml`** : sert à construire le squelette du site web (onglets, table des matières, chapitres) à partir des documents de contenu.  
 **`Makefile`** : sert à lancer des commandes raccourcies pour l'installation, la gestion et la mise en ligne du contenu.  
+
+## Méthodologie pour la production de contenu
+
+- Chaque chapitre correspond à un document rédigé en markdown. Une fois édité, ajoutez le chapitre au fichier `mkdocs.yml` dont le builder se servira pour générer les pages du site.
+
+- Les chapitres peuvent contenir plusieurs leçons, démos ou synthèse qui seront présentés sous forme de slides :
+  - soit intégrées en tant qu'iframe depuis `slides.com`
+  - soit transformées à partir de notebooks et hébergé sur un stockage distant partagé ( *à mettre en place*)
+  
+- Les images à intégrer sont hébergé sur un stockage distant partagé (*à mettre en place*)
 
 ## Installation 
 
@@ -34,10 +44,12 @@ A ce stade tous les composants pour la conception du site devraient être instal
 2. Mettre le site en ligne : 
 	- transformer les notebooks de leçons et les déployer sur stockage en ligne  : 
 	```bash
-   	sh .code/deploy_lesson.sh <nom-du-notebook>
+   sh .code/deploy_lesson.sh <nom-du-notebook>
    ```
-	- mettre a jour les pages de chapitres (fichiers markdown): 
+	- déployer le site via github pages à partir de la branche `gh-pages`: 
 	```bash
-   	make update_site
+   git checkout gh-pages
+   mkdocs gh-deploy
    ```
-
+   
+   
