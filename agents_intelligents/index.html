@@ -1,0 +1,1154 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../tour_horizon_IA_%26_JV/">
+      
+      
+        <link rel="next" href="../resolution_problemes_appliqu%C3%A9e_au_jeux/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.8">
+    
+    
+      
+        <title>Chapitre 3: Agents intelligents - IA & Jeux vidéos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f2e4d321.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#les-agents-intelligents-et-leurs-environnements" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="IA &amp; Jeux vidéos" class="md-header__button md-logo" aria-label="IA & Jeux vidéos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IA & Jeux vidéos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapitre 3: Agents intelligents
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Acceuil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../installation_python_simple/" class="md-tabs__link">
+          
+  
+  Pré-requis
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../decouverte_IA/" class="md-tabs__link">
+          
+  
+  Intelligence Artificielle & Jeux vidéos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ressources%20additionnelles/elements_cours/" class="md-tabs__link">
+          
+  
+  Ressources additionnelles
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../evaluations/Projet1_multiagent_pacman/" class="md-tabs__link">
+          
+  
+  Evaluations
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="IA &amp; Jeux vidéos" class="md-nav__button md-logo" aria-label="IA & Jeux vidéos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IA & Jeux vidéos
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acceuil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Pré-requis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Pré-requis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Installation & gestion de python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Installation & gestion de python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation_python_simple/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Outils pour la data science
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Intelligence Artificielle & Jeux vidéos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Intelligence Artificielle & Jeux vidéos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decouverte_IA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapitre 1: Découverte de l'IA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tour_horizon_IA_%26_JV/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapitre 2: Tour d'horizon de l'IA dans les JV
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chapitre 3: Agents intelligents
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Chapitre 3: Agents intelligents
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description-mathematique-et-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description mathématique et implémentation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comportement-optimal-dun-agent-le-concept-de-rationalite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comportement optimal d'un agent: le concept de rationalité
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comportement optimal d'un agent: le concept de rationalité">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition-de-la-rationalite-pour-un-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définition de la rationalité pour un agent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Définition de la rationalité pour un agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#non-omniscience-apprentissage-et-autonomie-des-consequences-de-notre-definition-de-la-rationalite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-omniscience, apprentissage et autonomie: des conséquences de notre définition de la rationalité
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proprietes-des-environnements-dune-tache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Propriétés des environnements d'une tâche
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#differents-types-dagents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Différents types d'agents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lexique-du-chapitre" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lexique du chapitre
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lexique du chapitre">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#termes-generaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Termes généraux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les agents
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resolution_problemes_appliqu%C3%A9e_au_jeux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapitre 4: Résolution de problèmes dans les jeux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Ressources additionnelles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Ressources additionnelles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../ressources%20additionnelles/elements_cours/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Elements de cours
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Elements de cours
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ressources%20additionnelles/elements_cours/ressources_datascience_IA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pour continuer votre formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Evaluations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Evaluations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../evaluations/Projet1_multiagent_pacman/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet 1: Pac Man multi agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="les-agents-intelligents-et-leurs-environnements">Les agents intelligents et leurs environnements</h1>
+<p><meta name="auteur" content="Nicolas Rochet">
+ <meta name="date_creation" content="mardi, 05. novembre 2019">
+ <meta name="date_modification" content="mercredi, 06. novembre 2019"></p>
+<h2 id="introduction">Introduction</h2>
+<p>Le terme d'<strong>agent rationnel</strong> interagissant avec un <strong>environnement</strong> est un concept central de l'intelligence artificielle, puisqu'il est sous-jacent à la plupart des concepts, théories et algorithmes que nous allons rencontrer dans cette discipline.
+On peut définir un <strong>agent</strong> comme une entité capable de percevoir son environnement par l'intermédiaire de <strong>capteurs sensoriels</strong> et d'agir sur cet environnement par l'intermédiaire d'<strong>effecteurs</strong>. </p>
+<blockquote>
+<p>Par exemple, un agent peut être incarné par un humain, un robot ou encore un programme informatique, il perçoit son environnement sous forme de <strong>percepts</strong> en recevant des entrées sensorielles (<em>appuis claviers, contenu de fichiers, ...</em>) et agissant sur son environnement (<em>en affichant des informations sur un écran, écrivant des fichiers, ...</em>)</p>
+</blockquote>
+<!--insérer ici une image illustrant l'interaction agent/environnement (inspiré de la figure 2.1)-->
+
+<h3 id="description-mathematique-et-implementation">Description mathématique et implémentation</h3>
+<p>D'un point de vue mathématique, le comportement d'un agent est décrit par une <strong>fonction d'agent</strong> , une description mathématique qui relie un percept donné à une séquence d'actions. On modélise souvent cette fonction d'agent sous forme de tableau, dans lequel, pour un environnement donné, on référence <strong>la séquence des percepts</strong> et les séquences d'actions correspondantes.
+On distingue la fonction d'agent de son implémentation, le <strong>programme d'agent</strong>, qui opère sur un système physique (<em>par exemple, un ordinateur</em>) et est souvent représentée par le <strong>pseudo-code</strong> d'un <strong>algorithme</strong>.</p>
+<blockquote>
+<p>Illustrons ces notions par l'exemple dessiné dans la figure 2.2 représentant un agent défini par un aspirateur dans un environnement simple content deux localisations A, contenant de la poussière et B, vide. Dans cet environnement, l'agent peut effectuer les actions de bouger à droite, à gauche, aspirer la poussière, ou ne rien faire. Une des plus simples fonction d'agent que l'on puisse définir serait : "Si l'endroit actuel est sale, alors aspire la poussière, sinon déplace toi vers l'autre localisation". Une modélisation tabulaire partielle pour cette fonction est représentée par la <strong><em>figure 2.3</em></strong>.</p>
+</blockquote>
+<p><strong>Figure 2.2</strong>: Exemple d'agent-aspirateur dans un environnement simple avec deux localisations.
+<img alt="Exemple d'un simple agent aspirateur" src="https://filedn.eu/lefeldrXcsSFgCcgc48eaLY/images/cours_datascience_IA/agent_aspirateur.png" title="Figure 2.2" /></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Séquence de percepts</strong></th>
+<th style="text-align: center;"><strong>Action</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">[A, propre]</td>
+<td style="text-align: center;">Se déplacer à droite</td>
+</tr>
+<tr>
+<td style="text-align: center;">[A, sale]</td>
+<td style="text-align: center;">Aspirer</td>
+</tr>
+<tr>
+<td style="text-align: center;">[B, propre]</td>
+<td style="text-align: center;">Se déplacer à gauche</td>
+</tr>
+<tr>
+<td style="text-align: center;">[B, sale]</td>
+<td style="text-align: center;">Aspirer</td>
+</tr>
+<tr>
+<td style="text-align: center;">[A, propre], [A, propre]</td>
+<td style="text-align: center;">Se déplacer à droite</td>
+</tr>
+<tr>
+<td style="text-align: center;">[A, propre], [A, sale]</td>
+<td style="text-align: center;">Aspirer</td>
+</tr>
+<tr>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Figure 2.3</strong>: Modélisation partielle sous forme de tableau de notre agent-aspirateur </p>
+<p>Avec cette implémentation simple, on peut définir le comportement de notre agent en remplissant le tableau. La question évidente qui se pose est de savoir comment remplir le tableau pour rendre notre agent intelligent ?</p>
+<h2 id="comportement-optimal-dun-agent-le-concept-de-rationalite">Comportement optimal d'un agent: le concept de rationalité</h2>
+<p>Intuitivement, un agent rationnel est un agent qui accomplit <em>les bonnes actions</em>. Dans notre exemple précédent construire un agent rationnel reviendrait à pourvoir remplir la table de la figure 2.3 avec <em>les meilleurs choix d'actions possibles pour chaque séquence de percepts</em>. Afin de définir plus précisément le concept de rationalité, on examine les <em>conséquences du comportement de l'agent sur son environnement</em>: on recherche à obtenir la <em>séquence d'états de l'environnement la plus désirable</em>. Cette désirabilité est évaluée par une <strong>mesure de la performance</strong> que l'agent rationnel cherchera à maximiser par ses actions.</p>
+<blockquote>
+<p>Bien entendu, il n'y a typiquement pas de mesure de la performance idéale pour toutes les tâches et tous les agents, cela dépendra des caractéristiques du problème à résoudre. Par exemple, dans notre exemple précédent avec notre agent-aspirateur (figure 2.2), on pourrait proposer comme mesure de performance la quantité de poussière ramassée par l'aspirateur pendant une période donnée. Un tel agent 'rationnel' pourrait maximiser cet mesure en nettoyant la poussière, puis la laisser tomber sur le sol pour la nettoyer de nouveau. Si le problème consiste à simplement nettoyer l'environnement ce comportement ne parait pas optimal, une mesure plus appropriée de la performance serait plutôt de récompenser l'agent par un point à chaque endroit qu'il a nettoyé à chaque pas de temps.</p>
+</blockquote>
+<h3 id="definition-de-la-rationalite-pour-un-agent">Définition de la rationalité pour un agent</h3>
+<p>Pour chaque séquence de percepts possible, un agent rationnel est celui qui va sélectionner l'action qui <strong>maximise la mesure de la performance attendue</strong>, indépendamment de la connaissance a priori que possède l'agent sur son environnement.</p>
+<blockquote>
+<p>Suivant cette définition, notre fonction d'agent définit plus tôt comme "Si l'endroit actuel est sale, alors aspire la poussière, sinon déplace toi vers l'autre localisation" caractérise t'elle un agent rationnel ? Cela dépend, il faut pour y répondre définir précisément la mesure de la performance, la connaissance à priori de l'agent de son environnement ainsi que ses percepts et actions possibles. Supposons que:
+- la performance consiste à récompenser d'un point chaque position nettoyée à chaque pas de temps durant une période donnée
+- la "géographie" de l'environnement est connue a priori mais la position initiale de la poussière et de l'aspirateur n'est pas forcément connue.
+- l'agent perçoit toujours correctement sa localisation et si celle-ci contient de la poussière.
+- dans l'environnement, à chaque pas de temps, chaque case reste propre une fois qu'elle à été nettoyée.
+- chaque nettoyage de l'aspirateur nettoie toujours la case dans laquelle il se trouve.
+- les actions "se déplacer à droite" et "se déplacer à gauche" déplacent toujours l'aspirateur sans qu'il sorte de son environnement.
+- les seules actions possibles sont "se déplacer à droite", "se déplacer à gauche" et "nettoyer".</p>
+</blockquote>
+<p><em>Alors, suivant ces circonstances, un tel agent est rationnel, sa performance sera toujours aussi élevée que celle de n'importe quel autre agent</em></p>
+<h4 id="non-omniscience-apprentissage-et-autonomie-des-consequences-de-notre-definition-de-la-rationalite">Non-omniscience, apprentissage et autonomie: des conséquences de notre définition de la rationalité</h4>
+<ul>
+<li>Il est important de remarquer que notre définition de la rationalité ne requiert pas pour l'agent de posséder une connaissance <strong>omnisciente</strong> des conséquences de ses actions, qui est impossible dans la réalité. Ainsi, l'agent rationnel  cherche à maximiser la performance <em>attendue</em> , qui dépend uniquement de la séquence de percepts connue au moment ou il agit.</li>
+<li>Notre définition implique qu'un agent rationnel soit capable, en général,  de <strong>rassembler de l'information</strong> et d'<strong>apprendre</strong> autant que possible à partir de ses percepts. Cet apprentissage lui permet de mettre a jour sa connaissance a priori de son environnement, excepté dans certains cas rare où son environnement est complètement connu a priori.</li>
+<li>Un agent rationnel devrait être <strong>autonome</strong>, c'est à dire que sa capacité à apprendre lui permette de compenser une connaissance partielle ou incorrecte de son environnement.</li>
+</ul>
+<h2 id="proprietes-des-environnements-dune-tache">Propriétés des environnements d'une tâche</h2>
+<p>On définit l'<strong>environnement d'une tâche</strong> (<em>task environnement</em>) comme l'ensemble englobant la performance d'un agent,  son environnement, ses effecteurs et ses capteurs sensoriels.
+Dans la discipline de l'Intelligence Artificielle, il est possible de catégoriser un certain nombre d'environnements de tâches en fonction de leur caractéristiques:</p>
+<ul>
+<li>
+<p>L'environnement d'une tâche est <strong>partiellement</strong> versus <strong>totalement</strong> observable si les capteurs peuvent percevoir une <strong>partie</strong> versus la <strong>totalité</strong> de l'état de l’environnement à chaque point de temps. Dans certains cas plus extrêmes, lorsque l'agent ne possède pas de capteurs, l'environnement est <strong>inobservable</strong>.</p>
+<blockquote>
+<p>Par exemple au poker, les cartes sont cachées (ou partiellement observables) mais le fait de mémoriser les coups passés permet d’acquérir des informations supplémentaires sur l’environnement.</p>
+</blockquote>
+</li>
+<li>
+<p>L'environnement d'une tâche peut être composé d'un <strong>agent simple</strong> versus un <strong>système multi-agent</strong>, c'est à dire un ensemble d'agents interagissant de manière <strong>compétitive</strong> ou <strong>coopérative</strong> dans un environnement pour accomplir une tâche donnée.</p>
+</li>
+<li>
+<p>L'environnement d'une tâche est <strong>bénin</strong> versus <strong>adverse</strong> lorsque <strong>l’environnement n’a pas d’objectif propre</strong> à l'opposé d'un <strong>environnement qui essaye de contrecarrer les actions de l’agent</strong> </p>
+<blockquote>
+<p>Par exemple, dans la plupart des sports ou dans certains jeux l’adversaire est un environnement adverse.</p>
+</blockquote>
+</li>
+<li>
+<p>L'environnement d'une tâche est <strong>déterministe</strong> versus <strong>stochastique</strong> lorsque l'état futur de l'environnement est déterminé <strong>uniquement par le résultat des actions de l'agent</strong> on dit qu'il est déterministe; dans tous les autres cas il est stochastique. Lorsque l'environnement d'une tâche n'est pas totalement observable ou pas déterministe, on le qualifie d'<strong>incertain</strong>.</p>
+</li>
+<li>
+<p>L'environnement d'une tâche est <strong>épisodique</strong> lorsque les expériences (percepts et action) de l'agent peuvent être découpées en épisodes élémentaires. Dans chacun de ces épisodes, l'agent reçoit un percept et exécute une action sans que cette action ne dépende des expériences du précédent épisodes. A l'opposé un environnement de tâche est <strong>séquentiel</strong>, lorsque les expériences en cours peuvent affecter les actions futures de l'agent. </p>
+<blockquote>
+<p>Dans ce type d'environnement de tâches assez courant, les actions à court terme on des conséquences à long terme, ce qui conduit généralement les créateurs d'agents à lui implémenter des stratégies de planification à long terme. La plupart des jeux de plateaux comme les échecs, sont des exemples d'environnements de tâches séquentiels </p>
+</blockquote>
+</li>
+<li>
+<p>L'environnement d'une tâche est <strong>dynamique</strong> si l'environnement auquel est confronté l'agent peut changer pendant le temps ou l'agent prend une décision. Lorsque l'environnement ne change pas pendant le temps mais que la performance de l'agent change, on parle d'environnement <strong>semi-dynamique</strong>. Dans tous les autres cas on définit l'environnement de la tâche comme <strong>statique</strong>.</p>
+</li>
+<li>
+<p>L'environnement d'une tâche est <strong>discret</strong> versus <strong>continu</strong>  lorsque l’agent dispose d’un nombre <strong>dénombrable</strong> versus <strong>indénombrable</strong> de stimuli à percevoir et d'actions à exécuter.</p>
+</li>
+<li>
+<p>L'environnement d'une tâche est <strong>connu</strong> versus <strong>inconnu</strong> en référence à la connaissance que peut avoir l'agent (ou son créateur) des lois qui gouvernent l'environnement (par exemple les lois de la physique). Dans un environnement connu, les conséquences (ou leur probabilités) de toutes les actions sont connues. Dans un environnement inconnu l'agent devra apprendre "comment l'environnement fonctionne" pour prendre des bonnes décisions. </p>
+<blockquote>
+<p>Par exemple un environnement physique est connu car soumis au lois de la physique par opposition à un environnement virtuel dans lequel son créateur peut choisir les règles qui régissent cet environnement et les maintenir cachées pour l'agent.</p>
+</blockquote>
+</li>
+</ul>
+<p>Comme vous pouvez vous en doutez, certains environnements de tâches constituent des problèmes plus compliqués à résoudre que d'autres, un des cas les plus durs étant un environnement de tâche partiellement observable, multi-agent, stochastique, séquentiel, dynamique continu, adverse et inconnu.</p>
+<h2 id="differents-types-dagents">Différents types d'agents</h2>
+<p>De manière générale en Intelligence Artificielle, on estime que les principes définissant la plupart des systèmes intelligents s'incarnent en quatre grandes catégories d'agents. Chacun d'entre eux combine des composants particulier pour prendre des décisions et générer des actions.  </p>
+<ul>
+<li>
+<p>les <em>simple-reflex agents</em>: ce type d'agent répondent directement aux percepts qu'ils reçoit en se basant sur des règles <strong>condition-action</strong> pré déterminées.</p>
+<blockquote>
+<p>Par exemple pour un agent de conduite autonome, une règle simple de condiction-action peut être "<strong>si</strong> le véhicule qui est situé devant freine <strong>alors</strong> freine.</p>
+</blockquote>
+</li>
+<li>
+<p>les <em>model-based reflex agents</em>: ce type agent possède un <strong>modèle de l'environnement</strong> (de simple règles logiques à de complexes théories scientifiques) qui leur permette de <em>maintenir une trace de l'état interne de l'environnement</em> à un instant <strong><em>t</em></strong> pour mettre à jour sa représentation de l'environnement et en conséquence exécuter des actions plus performantes. Ce genre d'agent est environnement est particulièrement adapté dans les environnements partiellement observables.</p>
+<blockquote>
+<p>Par exemple, notre agent de conduite autonome doit pouvoir détecter, à un instant <strong><em>t</em></strong>, sur le véhicule le précédant les lumières rouges indiquant un appui sur le frein et stocker cette information , pour pouvoir mettre a jour sa représentation de l'environnement à un instant <strong><em>t+1</em></strong> et "décider" de freiner.</p>
+</blockquote>
+</li>
+<li>
+<p>les <em>goal-based agents</em>: ce type d'agent possède les même composants que les <em>model-based reflex agents</em> avec un composant supplémentaire, un <strong>but</strong> qui lui permette de décider si une situation est "désirable" pour choisir une action à effectuer. Généralement les comportement de ce type d'agents sont plus flexible que ceux des deux types précédents en contrepartie de performances parfois moins importantes.</p>
+</li>
+<li>
+<p>les <em>utility-based agents</em>:  ce type d'agents intègrent, en plus des autres composants présents chez les autres types d'agents, une <strong>fonction d'utilité</strong> qui agit comme une mesure de la performance, interne à l'agent . Si cette mesure interne s'accorde avec la mesure externe de la performance, alors un agent qui maximise sa fonction d'utilité adoptera un comportement rationnel (puisqu'il maximisera aussi la performance externe).</p>
+</li>
+</ul>
+<p>Pour plus de détails concernant la construction et le fonctionnement de ces agents référez vous au chapitre 2.4 du livre cité en source.</p>
+<hr />
+<h2 id="lexique-du-chapitre">Lexique du chapitre</h2>
+<h3 id="termes-generaux">Termes généraux</h3>
+<ul>
+<li>Un <a href="https://fr.wikipedia.org/wiki/Algorithme">algorithme</a> est une suite finie et non ambiguë d’opérations ou d'instructions permettant de résoudre une classe de problèmes.</li>
+<li>Le <a href="https://fr.wikipedia.org/wiki/Pseudo-code">pseudo-code</a> est une façon de décrire un algorithme en langage presque naturel, sans référence à un langage de programmation en particulier. </li>
+</ul>
+<h3 id="les-agents">Les agents</h3>
+<ul>
+<li>Un <strong>percept</strong> désigne l'ensemble des entrée sensorielles reçues par un agent. Une <strong>séquence de percepts</strong> désigne l'historique complet de tous les percepts de l'agent.</li>
+</ul>
+<h2 id="sources">Sources</h2>
+<p>Chapitre 2 du livre <a href="http://aima.cs.berkeley.edu/">Artificial Intelligence, A modern approach, 3ème édtition. Sutart Russel &amp; Peter Norwig, <em>Pearson</em>.</a>  </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "toc.integrate"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+        <script src="../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1391 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../../evaluations/Projet1_multiagent_pacman/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.8">
+    
+    
+      
+        <title>Pour continuer votre formation - IA & Jeux vidéos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f2e4d321.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-science" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="IA &amp; Jeux vidéos" class="md-header__button md-logo" aria-label="IA & Jeux vidéos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IA & Jeux vidéos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pour continuer votre formation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Acceuil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../installation_python_simple/" class="md-tabs__link">
+          
+  
+  Pré-requis
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../decouverte_IA/" class="md-tabs__link">
+          
+  
+  Intelligence Artificielle & Jeux vidéos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Ressources additionnelles
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../evaluations/Projet1_multiagent_pacman/" class="md-tabs__link">
+          
+  
+  Evaluations
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="IA &amp; Jeux vidéos" class="md-nav__button md-logo" aria-label="IA & Jeux vidéos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IA & Jeux vidéos
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acceuil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Pré-requis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Pré-requis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Installation & gestion de python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Installation & gestion de python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation_python_simple/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Outils pour la data science
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Intelligence Artificielle & Jeux vidéos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Intelligence Artificielle & Jeux vidéos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../decouverte_IA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapitre 1: Découverte de l'IA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tour_horizon_IA_%26_JV/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapitre 2: Tour d'horizon de l'IA dans les JV
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents_intelligents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapitre 3: Agents intelligents
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resolution_problemes_appliqu%C3%A9e_au_jeux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapitre 4: Résolution de problèmes dans les jeux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Ressources additionnelles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Ressources additionnelles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Elements de cours
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Elements de cours
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Pour continuer votre formation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Pour continuer votre formation
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Science
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Science">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programmation-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programmation en python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programmation-orientee-objet-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programmation orientée objet en python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mini-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini cours
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elements-de-cours-par-thematique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eléments de cours par thématique
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Eléments de cours par thématique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorithmie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithmie
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cours-francophones-complets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cours francophones complets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathematiques-pour-la-data-science-et-le-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathématiques pour la data science et le machine learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mathématiques pour la data science et le machine learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#livres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Livres
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cours-videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cours &amp; vidéos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algebre-lineaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algèbre linéaire
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyse-fonctionnelle-et-calul" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyse fonctionnelle et calul
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Machine Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Machine Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction-au-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction au Machine Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cours-complets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cours complets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cours complets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anglophones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anglophones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#francophones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Francophones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#par-thematique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Par thématique
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deep Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ressources-generalistes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ressources généralistes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#livres_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Livres
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elements-de-cours-en-ligne" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eléments de cours en ligne
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Eléments de cours en ligne">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anglophones_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anglophones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gratuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gratuits
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Payants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#francophones_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Francophones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gratuits_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gratuits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payants_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Payants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etat-de-lart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Etat de l'art
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lectures-par-thematiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lectures par thématiques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lectures par thématiques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mathematiques-pour-le-deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathématiques pour le deep learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mathématiques pour le deep learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algebre-lineaire_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algèbre linéaire
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutoriels-exercices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutoriels &amp; Exercices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutoriels & Exercices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deep-learning_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Learning
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Evaluations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Evaluations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../evaluations/Projet1_multiagent_pacman/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet 1: Pac Man multi agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Pour continuer votre formation</h1>
+
+<p><meta name="auteur" content="Nicolas Rochet">
+ <meta name="date_creation" content="lundi, 02. mars 2020">
+ <meta name="date_modification" content="mercredi, 17. février 2022"></p>
+<h2 id="data-science">Data Science</h2>
+<h3 id="programmation-en-python">Programmation en python</h3>
+<p>Pour trouver des ressources pertinentes en fonction de votre expérience en python, référez vous au <strong>Chapitre 2 du cours Data Science</strong></p>
+<h3 id="programmation-orientee-objet-en-python">Programmation orientée objet en python</h3>
+<p>Si vous souhaitez approfondir vos connaissances sur la programmation orienté objet en python, vous pouvez suivre ces cours d'Open Classrooms, en fonction de votre besoin:</p>
+<ul>
+<li><a href="https://openclassrooms.com/fr/courses/4302126-decouvrez-la-programmation-orientee-objet-avec-python">cous niveau facile</a></li>
+<li><a href="https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python">cours niveau moyen</a></li>
+</ul>
+<h3 id="mini-cours">Mini cours</h3>
+<p>Récemment la plateforme kaggle à mise en place des mini cours accompagnés d'exercices corrigés par chapitres qui sont rapides à faire. Ces cours vous permettront de découvrir certaines notions fondamentales, que vous aurez l'occasion de creuser par la suite.</p>
+<p>Je vous conseille, en fonction de votre niveau de connaissance, et par ordre de priorité de suivre les mini cours suivants:</p>
+<ul>
+<li>l'apprentissage de <a href="https://www.kaggle.com/learn/pandas">pandas</a> le module de python le plus utilisé pour gérer les données tabulaires</li>
+<li>l'introduction <a href="https://www.kaggle.com/learn/intro-to-sql">aux bases du langage SQL</a> pour la manipulation de base de données. Optionnellement, vous pouvez allez plus loin, en explorant des <a href="https://www.kaggle.com/learn/advanced-sql">fonctionnalités plus avancées du langage SQL</a>, notamment en apprenant à combiner plusieurs tables</li>
+<li>apprendre les <a href="https://www.kaggle.com/learn/data-cleaning">principes de base du nettoyage de données</a> et pourrez compléter vos connaissances en testant des <a href="https://scikit-learn.org/stable/modules/preprocessing.html#preprocessing-data">méthodes d'apprentissage automatique pour le pré-traitement de données</a> en explorant le menu dédié du framework sckit-learn. Pour aller encore plus loin, vous pouvez tester <a href="https://scikit-learn.org/stable/modules/label_propagation.html#semi-supervised">les algorithmes d'apprentissage semi-supervisé pour la labellisation automatique de donnée</a> du même framework</li>
+<li>enfin vous pouvez terminer votre apprentissage des principes de bases en étudiant le <a href="https://www.kaggle.com/learn/feature-engineering">feature engineering</a></li>
+</ul>
+<h3 id="elements-de-cours-par-thematique">Eléments de cours par thématique</h3>
+<h4 id="algorithmie">Algorithmie</h4>
+<p>Vous pourrez découvrir des <a href="https://openclassrooms.com/fr/courses/1467201-algorithmique-pour-lapprenti-programmeur/1467409-un-peu-de-pratique">bases pratiques de l'algorthmie avec ce cours d'Open Classroom</a>. Je vous conseille de cibler en particulier les chapitres concernant les structure de données <em>files, listes et arbres</em></p>
+<h3 id="cours-francophones-complets">Cours francophones complets</h3>
+<p>Les cours suivants sont des cours très complet qui sont dispensés dans des masters spécialisés dans la data science. Vous n'aurez probablement pas le temps de les explorer complètement, je vous conseille de vous y référer uniquement quand vous avez besoin d'approfondir un sujet précis ou pour rechercher des exercices supplémentaires</p>
+<ul>
+<li>le cours  du master SISE de Lyon 2  consacré à la data science et au data mining, en particulier les c<a href="http://tutoriels-data-mining.blogspot.com/p/sise.html">ours de mise à niveau</a>, que je conseille particulièrement si vous avez fait peu de maths et d'informatique (en particulier du python)</li>
+<li>le cours du <a href="http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/projet_info_2A.html#data-scientist">module de data science du cours de l'ENSAE</a> à Paris</li>
+</ul>
+<!-- Ajouter une section pour lister les ressources en dataviz -->
+
+<h2 id="mathematiques-pour-la-data-science-et-le-machine-learning">Mathématiques pour la data science et le machine learning</h2>
+<h3 id="livres">Livres</h3>
+<ul>
+<li>Afin d'approfondir en continu votre apprentissage des mathématiques de bases pour la data science et le machine learning, n'hésitez pas à fouiller parmi les chapîtres du livre <a href="https://mml-book.github.io/">mathematics for machine learning</a> lorsque vous aurez besoin d'approfondir  certaines notions fondamentales ou d'en découvrir d'autres.</li>
+<li><a href="https://www.statlearning.com/">An introduction to statistical learning</a> est un ouvrage de référence, quasiement la bible de la data science et du machine learning !<br />
+Je vous conseille de le consulter lorsque vous aurez déja un niveau de base en data science et machine learning et que vous aurez besoin de vous plonger dans les mathématiques détaillées d'un concept particulier</li>
+</ul>
+<h3 id="cours-videos">Cours &amp; vidéos</h3>
+<p>Je vous invite à continuer à vous former tout au long du cours, au fur et a mesure que vous aurez besoin d'approfondir certaines notions.</p>
+<ul>
+<li>Vous trouverez sur <a href="https://towardsdatascience.com/mathematics-for-data-science-e53939ee8306">cet article de blog de toward data science</a> une liste très complète de ressources pour acquérir les fondamentaux de maths pour la data science</li>
+<li>Pour explorer certains sujets précis, vous pouvez lire <a href="https://towardsdatascience.com/tagged/essential-math">cette serie d'articles thématiques</a> par Hadrien Jean (tiré de <a href="https://www.essentialmathfordatascience.com/?utm_source=hadrienj&amp;utm_medium=blog&amp;utm_campaign=hadrienj_2021-02-01-Essential-Math-for-Data-Science-Change-of-Basis.md">son livre</a>)</li>
+<li>Enfin, si vous débutez et souhaiter apprendre les mathématiques depuis un niveau collège, je vous conseille les cours de la plateforme <a href="https://fr.khanacademy.org/math/">khan academy</a> (vous trouverez beaucoup de contenus en français)</li>
+</ul>
+<!-- To Do: Rajouter précisément les chapitres de khan academy utiles  -->
+<h3 id="algebre-lineaire">Algèbre linéaire</h3>
+<p>L'algèbre linéaire est un domaine des mathématiques dont vous aurez particulièrement besoin durant ce cours pour comprendre les notions de vecteurs, matrices, tenseurs et leurs opérations associées.</p>
+<ul>
+<li>
+<p>Je vous conseille de regarder l'intégralité de la série de vidéos <a href="https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab"><strong>Essence of linear algebra</strong></a>, de l'excellente chaîne de vulgarisation mathématique <a href="https://www.youtube.com/c/3blue1brown/featured">3Blue1Brown</a>  </p>
+</li>
+<li>
+<p>En français, je vous conseille la série de cours vidéo de khan academy : </p>
+</li>
+<li>
+<p><a href="https://fr.khanacademy.org/math/linear-algebra/vectors-and-spaces/vectors/v/vector-introduction-linear-algebra">introduction à l'algèbre linéaire</a></p>
+</li>
+<li><a href="https://fr.khanacademy.org/math/linear-algebra/vectors-and-spaces">les vecteurs &amp; espaces vectoriels</a></li>
+<li><a href="https://fr.khanacademy.org/math/linear-algebra/matrix-transformations">les matrices d'applications linéaires</a></li>
+</ul>
+<!-- Rajouter un cours sur la notion de tenseur -->
+<h3 id="analyse-fonctionnelle-et-calul">Analyse fonctionnelle et calul</h3>
+<p>Je vous conseille de regarder l'intégralité de la série de vidéos <a href="https://youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr"><strong>Essence of calculus</strong></a>, de l'excellente chaîne de vulgarisation mathématique <a href="https://www.youtube.com/c/3blue1brown/featured">3Blue1Brown</a></p>
+<h2 id="machine-learning">Machine Learning</h2>
+<h3 id="introduction-au-machine-learning">Introduction au Machine Learning</h3>
+<ul>
+<li>
+<p>Je vous recommande de lire la page <a href="https://scikit-learn.org/stable/tutorial/statistical_inference/supervised_learning.html?highlight=curse">tutoriel de scikit-learn</a> qui vous introduit quelques bases du machine learning accompagnées d'exemples qui vous permettront d'apprendre à programmer avec ce framework indispensable.</p>
+</li>
+<li>
+<p>La <a href="https://www.tensorflow.org/resources/learn-ml">page des ressources éducatives du framework tensorflow</a> propose plein de livres et de cours (dont la plupart sont gratuits) que vous pouvez explorer pour développer vos connaissances théoriques et techniques sur le machine learning et le deep learning.</p>
+</li>
+</ul>
+<h3 id="cours-complets">Cours complets</h3>
+<h4 id="anglophones">Anglophones</h4>
+<ul>
+<li>La plateforme Kaggle propose maintenant <a href="https://www.kaggle.com/learn/overview">des cours accompagnés d'exercices</a> concernant le machine learning, <em>Intro to Machine Learning</em>  et <em>Intermediate Machine Learning</em> que je vous conseille de faire si possible en intégralité.</li>
+</ul>
+<h4 id="francophones">Francophones</h4>
+<ul>
+<li>La plateforme Open Classrooms propose deux cours assez complets que vous pouvez suivre en sélectionnant les chapitres qui compléteront le plus vos connaissances : perfectionnez vos bases avec le cours <a href="https://openclassrooms.com/fr/courses/4011851-initiez-vous-au-machine-learning">Initiez vous au machine learning</a> et avec approfondissez les notions d'évaluation vos algorithmes en évitant le <strong>biais de sur apprentissage</strong> cours <a href="https://openclassrooms.com/fr/courses/4297211-evaluez-les-performances-dun-modele-de-machine-learning">Evaluez les performances d'un modèle de machine learning</a> </li>
+</ul>
+<h3 id="par-thematique">Par thématique</h3>
+<ul>
+<li>Un <a href="https://towardsdatascience.com/what-are-hyperparameters-and-how-to-tune-the-hyperparameters-in-a-deep-neural-network-d0604917584a">article du blog towards data science</a> vulgarisé sur les paramètres et hyper-paramètres des réseaux de neurones</li>
+</ul>
+<h2 id="deep-learning">Deep Learning</h2>
+<h3 id="ressources-generalistes">Ressources généralistes</h3>
+<p>La <a href="https://www.tensorflow.org/resources/learn-ml">page des ressources éducatives du framework tensorflow</a> propose un <strong>contenu très riche</strong> contenant <strong>livres</strong>, cours en ligne, <strong>concepts mathématiques</strong>, <strong>ressources tensorflow</strong>, ... 
+Je vous conseille vivement de vous y référez pour développer vos connaissances théoriques et techniques (pour le machine learning et le deep learning) et vous aider pour la réalisation des projets.</p>
+<p>Bien que les cours francophones proposés soient de bonne qualité, je vous conseille de suivre les cours en anglais, car ils sont généralement plus nombreux et  plus complets.</p>
+<h3 id="livres_1">Livres</h3>
+<p><a href="https://link.springer.com/article/10.1007/s10710-017-9314-z">Deep learning</a>, par Ian Goodfellow, Yoshua Bengio and Aaron Courville, est un livre de référence pour un apprentissage complet des bases théoriques du deep learning</p>
+<h3 id="elements-de-cours-en-ligne">Eléments de cours en ligne</h3>
+<h4 id="anglophones_1">Anglophones</h4>
+<h4 id="gratuits">Gratuits</h4>
+<ul>
+<li>
+<p>Les <a href="https://www.youtube.com/watch?v=SGZ6BttHMPw&amp;list=PL6Xpj9I5qXYEcOhn7TqghAJ6NAPrNmUBH">vidéos de découverte des reseaux de neurones de Hugo Larochelle</a> vous permettent de découvrir en 92 courtes présentations (excédant rarement les 15 minutes) des points clés pour compléter votre compréhension de certains sujets</p>
+</li>
+<li>
+<p>Le cours offrant le meilleur compromis exhaustivité/temps que je vous conseille de regarder en priorité et en intégralité (il dure moins d'une heure), est ce cours <a href="http://introtodeeplearning.com/">récent d'introduction au Deep Learning par le MIT</a></p>
+</li>
+<li>Ce cours <a href="http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=DeepLearning">Standford</a> est un des meilleur et des plus complet sur le sujet. Vous pouvez retrouverez les vidéos des cours magistraux <a href="https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv">ici</a></li>
+<li>Le cours <a href="https://course.fast.ai/index.html">fast.ai</a> est un très bon cours, destiné aux programmeurs pour apprendre l'essentiel de la technique et de la théorie rapidement. Concentrez vous en particulier sur la leçon 1.</li>
+<li>Ce <a href="http://neuralnetworksanddeeplearning.com/index.html">cours de Michael Nielsen</a> extrait de son livre, est très illustré et vous permettra de peaufiner certains points particuliers</li>
+</ul>
+<h3 id="payants">Payants</h3>
+<ul>
+<li>Ce cours de <a href="https://www.coursera.org/specializations/deep-learning?edocomorp=mar19affiliate20off&amp;ranEAID=vedj0cWlu2Y&amp;ranMID=40328&amp;ranSiteID=vedj0cWlu2Y-gVEh8s2dZJMcmeReNFALdA&amp;siteID=vedj0cWlu2Y-gVEh8s2dZJMcmeReNFALdA&amp;utm_campaign=vedj0cWlu2Y&amp;utm_content=10&amp;utm_medium=partners&amp;utm_source=linkshare">Andrew Ng</a>, un des pionniers du deep learning est disponible sur la plateforme Coursera</li>
+</ul>
+<h3 id="francophones_1">Francophones</h3>
+<h3 id="gratuits_1">Gratuits</h3>
+<ul>
+<li>
+<p><a href="https://fidle.cnrs.fr/w3/programme.html">Les cours de la plateforme Fidle</a> (co-crée) par le CNRS est un cours en francais les plus complets : il reprend les conceptes fondamentaux en cours vidéo et est mis à jour régulièrement avec les dernières avancées</p>
+</li>
+<li>
+<p>Le cours <a href="">d'OpenClassroom, <em>Initiez vous au deep learning</em></a>. Le <a href="http://cedric.cnam.fr/vertigo/Cours/ml2/coursDeep1.html">cours du CNAM</a> couvre assez rapidement les principes généraux. Les diapositives du cours sont en anglais.</p>
+</li>
+<li>
+<p>Pour ceux qui ne connaissent pas le <strong>machine learning</strong>, vous pouvez suivre ce <a href="https://openclassrooms.com/fr/courses/4011851-initiez-vous-au-machine-learning">cours d'initiation d'OpenClassroom</a></p>
+</li>
+<li>
+<p>Vous trouverez des <em>fiches de cours de bonne qualité, précises et détaillées</em>, sur des points spécifiques ( comme la descente de gradient, le perceptron) sur le <a href="http://eric.univ-lyon2.fr/%7Ericco/cours/supports_data_mining.html">cours du Master SISE de Lyon</a></p>
+</li>
+</ul>
+<h3 id="payants_1">Payants</h3>
+<ul>
+<li>La plateforme Udemy à ouvert un <a href="https://www.udemy.com/course/le-deep-learning-de-a-a-z/">cours sur le deep learning</a>, c'est probablement le plus complet en français à l'heure actuelle.</li>
+</ul>
+<h3 id="etat-de-lart">Etat de l'art</h3>
+<p>Je vous conseille l'excellent site <a href="https://paperswithcode.com/sota">papers with code</a> qui référence une bonne partie de l'état de l'art, par tâches, en proposant des articles récents et leur code correspondants.</p>
+<h2 id="lectures-par-thematiques">Lectures par thématiques</h2>
+<ul>
+<li>Un <a href="https://towardsdatascience.com/what-are-hyperparameters-and-how-to-tune-the-hyperparameters-in-a-deep-neural-network-d0604917584a">article du blog towards data science</a> vulgarisé sur les paramètres et hyper-paramètres des réseaux de neurones</li>
+<li>Si vous êtes intéressé par le Natural Language Processing et que vous souhaitez approfondir le sujet de manière détaillée, je vous suggère de regarder la <a href="https://www.youtube.com/playlist?list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY42z">série de vidéos du cours dédié de Standford CS224N</a></li>
+</ul>
+<h3 id="mathematiques-pour-le-deep-learning">Mathématiques pour le deep learning</h3>
+<h4 id="algebre-lineaire_1">Algèbre linéaire</h4>
+<p>L'algébre linéaire est un domaine des mathématiques dont vous aurez particulièrement besoin durant ce cours pour comprendre les notions de vecteurs, matrices, tenseurs et leurs opérations associées.</p>
+<ul>
+<li>Cette <a href="https://www.youtube.com/watch?v=fNk_zzaMoSs&amp;list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">série de cours vidéos</a> de la chaine <strong>3Blue1Brown</strong> vous aidera à apprendre les bases de l'algèbre linéaire, en particulier les notions de <strong>vecteurs</strong>, d'<strong>espaces vectoriels</strong> et de <strong>matrices</strong>. Je vous conseille de vous concentrer sur les videos 1,2,3,4,9,10 et 11</li>
+</ul>
+<h2 id="tutoriels-exercices">Tutoriels &amp; Exercices</h2>
+<h3 id="deep-learning_1">Deep Learning</h3>
+<ul>
+<li>
+<p>La section <a href="https://www.tensorflow.org/tutorials">tutoriel</a> de Tensorflow est complète et détaillée. Commencez par la section pour les débutants. Vous pourrez exécuter le code proposé dans Colab, le notebook proposé par Google</p>
+</li>
+<li>
+<p>La section <a href="https://pytorch.org/tutorials/">tutorial de PyTorch</a> contient des exercices et des applications classique du deep learning. Je vous recommande en particulier le  <a href="https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html">tutoriel <em>deep learning 60min blitz</em></a> pour apprendre à manipuler le framework</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

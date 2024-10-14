@@ -1,0 +1,1400 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../agents_intelligents/">
+      
+      
+        <link rel="next" href="../ressources%20additionnelles/elements_cours/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.8">
+    
+    
+      
+        <title>Chapitre 4: Résolution de problèmes dans les jeux - IA & Jeux vidéos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f2e4d321.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#resolution-de-problemes-appliquee-au-jeux" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="IA &amp; Jeux vidéos" class="md-header__button md-logo" aria-label="IA & Jeux vidéos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IA & Jeux vidéos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapitre 4: Résolution de problèmes dans les jeux
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Acceuil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../installation_python_simple/" class="md-tabs__link">
+          
+  
+  Pré-requis
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../decouverte_IA/" class="md-tabs__link">
+          
+  
+  Intelligence Artificielle & Jeux vidéos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ressources%20additionnelles/elements_cours/" class="md-tabs__link">
+          
+  
+  Ressources additionnelles
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../evaluations/Projet1_multiagent_pacman/" class="md-tabs__link">
+          
+  
+  Evaluations
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="IA &amp; Jeux vidéos" class="md-nav__button md-logo" aria-label="IA & Jeux vidéos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IA & Jeux vidéos
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acceuil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Pré-requis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Pré-requis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Installation & gestion de python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Installation & gestion de python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation_python_simple/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Outils pour la data science
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Intelligence Artificielle & Jeux vidéos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Intelligence Artificielle & Jeux vidéos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decouverte_IA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapitre 1: Découverte de l'IA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tour_horizon_IA_%26_JV/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapitre 2: Tour d'horizon de l'IA dans les JV
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents_intelligents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapitre 3: Agents intelligents
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chapitre 4: Résolution de problèmes dans les jeux
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Chapitre 4: Résolution de problèmes dans les jeux
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comment-definir-un-probleme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment définir un problème ?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-jeux-en-tant-que-problemes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les jeux en tant que problèmes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caracterisation-de-notre-environnement-de-tache-pour-le-projet-pac-man" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caractérisation de notre environnement de tâche pour le projet Pac Man
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parcours-de-graphes-arbres-le-contexte-des-jeux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parcours de graphes &amp; arbres :  le contexte des jeux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parcours de graphes & arbres : le contexte des jeux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fonction-dutilite-et-fonction-devaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonction d'utilité et fonction d'évaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algorithme-minimax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithme minimax
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorithme minimax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition-et-premiere-intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définition et première intuition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations-de-minimax-ameliorations-possibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations de minimax &amp; améliorations possibles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elagage-alpha-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elagage alpha-beta
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Elagage alpha-beta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principe-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principe général
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jeux-stochastiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jeux stochastiques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Jeux stochastiques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expectiminimax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expectiminimax
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-aux-jeux-multi-joueurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application aux jeux multi joueurs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quelques-pistes-de-recherches-pour-votre-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quelques pistes de recherches pour votre projet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lexique-du-chapitre" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lexique du chapitre
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lexique du chapitre">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vocabulaire-de-la-theorie-des-graphes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vocabulaire de la théorie des graphes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vocabulaire-de-la-theorie-des-jeux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vocabulaire de la théorie des jeux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vocabulaire-de-linformatique-et-de-lalgorithmie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vocabulaire de l'informatique et de l'algorithmie
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annexes:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Annexes:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudo-code-des-possibles-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pseudo-code des possibles implémentations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pseudo-code des possibles implémentations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorithme-minimax_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithme minimax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elagage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elagage αβ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expectiminimax_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expectiminimax
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Ressources additionnelles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Ressources additionnelles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../ressources%20additionnelles/elements_cours/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Elements de cours
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Elements de cours
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ressources%20additionnelles/elements_cours/ressources_datascience_IA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pour continuer votre formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Evaluations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Evaluations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../evaluations/Projet1_multiagent_pacman/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet 1: Pac Man multi agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="resolution-de-problemes-appliquee-au-jeux">Résolution de problemes appliquée au jeux</h1>
+<p><meta name="auteur" content="Nicolas Rochet">
+ <meta name="date_creation" content="vendredi, 08. novembre 2019">
+ <meta name="date_modification" content="lundi, 15. novembre 2021"></p>
+<h2 id="comment-definir-un-probleme">Comment définir un problème ?</h2>
+<p>La résolution de problème fait partie historiquement d'un des grand domaines de l'Intelligence Artificielle. Dans ce domaine, de nombreux problèmes qui se rapportent à un <strong>environnement déterministe, observable, statique et complétement connu</strong>, peuvent être résolu par des agents capables de trouver des solutions à ces problèmes en construisant des sequences d'actions répondant à <strong>un but</strong> (les goal-based agents). </p>
+<p>Mathématiquement, ces problèmes se caractérisent par six propriétés:<br />
+- une représentation de l'environnement par un <strong>espace des états</strong>
+- un état initial <strong><em>s</em></strong> avec lequel l'agent démarre.<br />
+- une description de toutes les actions possibles par l'agent qui se modélise par une fonction <span class="arithmatex">\(Actions(s) ⟶ {a_1,a_2, a_3, ...}\)</span> <br />
+- une description des résultats de chacune de ces actions qui se modélise par une fonction qui renvoie un nouvel état <strong><em>s'</em></strong>, résultat de l'action <strong><em>a</em></strong> effectuée dans l'état <strong><em>s</em></strong>: <span class="arithmatex">\(Resultats(s, a) ⟶ s'\)</span> <br />
+- une <strong>fonction de but</strong> interne à l'agent qui lui permet de décider si l'état en cours <strong><em>s</em></strong> correspond à un état à atteindre. <br />
+- une solution au problème, définie comme un <strong>chemin</strong> à travers l'espace des états entre l'état initial et le but. <br />
+- une <strong>fonction de cout</strong> qui détemine une valeur numérique pour chaque chemin dans l'environnement.  </p>
+<p>Les algorithmes de <strong>recherche de graphe</strong> sont une classe de solutions très populaire pour ce genre de problème; certains de ces algorithmes ont permis de réaliser des progrès important dans la recherche en Intelligence Artificielle depuis ses débuts à nos jours, notamment dans les jeux.</p>
+<!--A rajouter: les différentes catégories de recherches (p108 - 109):
+ Evaluation de la complexité algorithmique des alrogithmes de recherche
+ Uninformed search methods
+- Breadth-first search
+- Uniform cost search
+- Depth-first search
+- Iterative deepening search
+- Biderectionnal search
+ Informed search methods
+- best-first search
+- greedy best-first search
+- A*
+- RBFS (recursive best-first search) et SMA* simplified memory-bounded A*) -->
+
+<h2 id="les-jeux-en-tant-que-problemes">Les jeux en tant que problèmes</h2>
+<p>Dans l'Intelligence Artificielle, les jeux intéressent beaucoup les chercheurs car ils appartiennent à une catégorie de problèmes difficile à résoudre, contrairement à des problèmes plus simple pour lequel on connait des algorithmes offrant <strong>une solution optimale</strong>, comme par exemple, <a href="https://fr.wikipedia.org/wiki/Probl%C3%A8me_de_plus_court_chemin">le problème du plus court chemin</a>.</p>
+<p>Ainsi les problèmes associés au jeux possèdent des contraintes additionnelles du fait de la présence d'un ou plusieurs adversaires:<br />
+- les solutions et leur optimalité dépendent des caractéristiques des adversaires.<br />
+- les agents doivent souvent trouver des réponses dans un temps limité, ce qui exige parfois la recherche de solution approximative.<br />
+- la création d'une bonne fonction d'évaluation des états de l'environnement (ou ici, les situations de jeu) est délicate et dépend fortement des propriétés du jeu.</p>
+<h2 id="caracterisation-de-notre-environnement-de-tache-pour-le-projet-pac-man">Caractérisation de notre environnement de tâche pour le projet Pac Man</h2>
+<p>Dans notre <a href="../evaluations/Projet1_multiagent_pacman/">projet Pac Man multi agent</a>, il est impératif de définir notre environnement de tâche afin de pouvoir modéliser notre problème et d'en chercher des solutions.
+L'environnement de tâche du jeu est:</p>
+<ul>
+<li><em>totalement obervable</em>: Pac Man connaît la totalité de l'environnement du jeu (voir dans le code l'objet <code>GameState</code>).  </li>
+<li><em>multi-agent</em>: vous devrez modéliser le comportement de Pac Man en prenant en compte celui des fantômes.  </li>
+<li><em>adverse</em>: les fantômes cherchent à éliminer Pac Man.  </li>
+<li><em>déterministe</em>: les actions de Pac Man ne sont influencées par aucune variable aléatoire.  </li>
+<li><em>séquentiel</em>: vous avez plutôt intérêt à considérer que l'état du jeu à un instant <strong><em>t-1</em></strong> puisse influencer les actions de Pac Man à l'état à l'instant <strong><em>t</em></strong>.   </li>
+<li><em>discret</em>: les actions possibles de Pac Man sont dénombrables.  </li>
+<li><em>connu</em>: vous avez plutôt intérêt à donner à Pac Man la connaissance à priori des règles qui régissent son environnement.  </li>
+</ul>
+<h2 id="parcours-de-graphes-arbres-le-contexte-des-jeux">Parcours de graphes &amp; arbres :  le contexte des jeux</h2>
+<p>Si vous n'êtes pas familier avec la notion de graphes, vous en avez sûrement déja utilisé sans le savoir. Par exemple, si vous avez déja utilisé un GPS pour vous rendre d'un point A à un point B, vous avez expérimenté une classe d'algorithmes dédiée à résoudre <strong>le problème du plus court chemin</strong>, algorithmes qui fonctionnent en visitant un graphe représentant la carte de votre voyage.</p>
+<p>De la même manière que le problème du plus court chemin peut se modéliser sous forme de <strong>graphe</strong> et en particulier sous forme d'<strong>arbre</strong> (une sous catégorie de graphe), la plupart des jeux se prêtent bien à cette modélisation. Dans ce type de modélisation, qu'on appelle alors <strong>d'arbre de jeu</strong>, les noeuds représentent des état de l'environnement (ici des situations de jeu) et les arrêtes les mouvements possibles des joueurs.</p>
+<p>Dans certains jeux simples comme le tic-tac-toe (qui ne possède que 362 880 noeuds terminaux), l'arbre de jeu peut modéliser complètement l'ensemble des états possibles jusqu'aux <strong>états terminaux</strong> qui représentent les états de fin de partie et dont la valeur est évaluée par la fonction d'utilité.  </p>
+<p><img alt="Exemple d'un arbre de jeu pour le tic-tac-toe" src="https://filedn.eu/lefeldrXcsSFgCcgc48eaLY/images/cours_datascience_IA/tic_tac_toe_graphe_tree.jpg" title="Figure 3.1" /> <br />
+<strong>Figure 3.1</strong>: Exemple d'arbre (partiel) de jeu pour le tic-tac-toe. Le noeud racine correspond à l'état initial de la partie, puis les coups du joueur MAX sont représentés pas les <strong>X</strong> et ceux du joueurs MIN par les <strong>O</strong>. Les noeuds terminaux représentent les états finaux possible de la partie, qui sont évalués par une <strong>fonction d'utilité</strong>.   </p>
+<p>Cependant la plupart des jeux sont trop complexes pour qu'on puisse les représenter complétement par un arbre, c'est le cas par exemple des échecs dont l'arbre de jeu serait constitué de <span class="arithmatex">\(10^{40}\)</span> noeuds !
+ Dans ce genre de cas, on utilise alors des <strong>arbres de recherche</strong> qui représentent uniquement un nombre suffisant d'états pour permettre à notre agent de choisir le coup à jouer.  Suivant cette modélisation, on peut utiliser des méthodes de <strong>parcours de graphe</strong> pour trouver la solution au problème du jeu, à savoir déterminer le meilleur coup à jouer.</p>
+<p>Dans le cas de notre projet Pac Man , le choix des actions de Pac Man peuvent se modéliser par un arbre de recherche, c'est le premier ingrédient pour notre agent rationnel.</p>
+<h3 id="fonction-dutilite-et-fonction-devaluation">Fonction d'utilité et fonction d'évaluation</h3>
+<p>Le second ingrédient pour modéliser le comportement d'un agent rationnel comme notre Pac Man consiste à pouvoir évaluer l<strong>'utilité</strong> des situations de jeu à chaque instant.  Le concept de fonction d'utilité vient des domaines de la <strong>théorie de la décision</strong> et de<strong> l'économie</strong>. Transposée au domaine de l'Intelligence Artificielle, la fonction d'utilité
+sert à <em>estimer une valeur</em> pour les <em>états terminaux d'un environnement</em>, par exemple, dans le cas d'un jeu, en assignant la valeur +1 pour le gain et la valeur -1 pour une perte de la partie. Cette fonction permet aux agents de décider de leurs actions en cherchant à maximiser leur fonction d'utilité, il s'agit des <em>utility-based agents</em> vus au chapitre sur les agents intelligents.</p>
+<p>Dans un jeu simple pour lequel on pourrait modéliser et calculer toutes les situations de jeu dans un temps acceptable, la fonction d'utilité seule pourrait suffire à déduire, en partant des états terminaux, les valeurs des situations de jeu intermédiaires, mais ce cas est très rare dans la pratique. Dans la plupart des jeux, nous aurons besoin d'estimer la valeur des situations de jeu intermédiaires, en évaluant la possibilité que ces situations puissent conduire à la victoire d'un joueur donné. On utilise pour ce faire une fonction d'évaluation qui est souvent difficile à modéliser. La modélisation de cette fonction nécessite souvent des connaissances sur le jeu et n'est pas souvent garantie d'être optimale, c'est pourquoi on ne se contente souvent d'utiliser <strong>une heuristique</strong> de fonction d'évaluation.</p>
+<blockquote>
+<p>Par exemple, aux échecs on attribue des valeurs à chaque pièce en fonction de sa puissance. Une heuristique de fonction d'évaluation souvent utilisée consiste à calculer la différence de la valeur des pièces capturées par chacun des joueurs. </p>
+</blockquote>
+<!-- Rajouter des infos potentielles en lisant les pages  171 & 172-->
+
+<h3 id="algorithme-minimax">Algorithme minimax</h3>
+<h4 id="definition-et-premiere-intuition">Définition et première intuition</h4>
+<p>L'algorithme <strong>minimax</strong> est un algorithme <strong>récursif</strong> de <strong>parcours de graphe</strong> utilisé dans les jeux à n joueurs pour choisir les actions que doit effectuer un joueur (ou un agent artificiel). Il permet de calculer la <strong>valeur</strong> pour chaque état <strong><em>s</em></strong> de l'environnement à partir d'une heurisitique de  <strong>fonction d'évaluation</strong> qui permet d'approximer <em>l'utilité</em> de l'état <strong><em>s</em></strong> (savoir s'il s'agit d'une bonne ou mauvais actions à jouer).
+Cet algorithme est souvent utilisé en particulier dans <strong>les jeux à somme nulle</strong>, un sous domaine de la <strong>théorie des jeux</strong>. Dans ce type de jeux, correspondant à environnement de tâche adverse, la problématique réside dans le fait que chaque joueur va chercher à maximiser la valeur état <strong><em>s</em></strong> de l'environnement . Dans un jeu de plateau comme les échecs par exemple, il faut prendre en compte dans le choix des coups le fait que l'adversaire cherche également à maximiser son coup, il est alors simpliste de se contenter de simplement choisir le "meilleur coup dans l'absolu".  </p>
+<p>Intuitivement, l'algorithme <strong>minimax</strong> répond à ce problème en proposant une règle de décision qui vise à <strong>minimiser la possible perte maximale</strong> (correspondant au pire des scenarii possible pour notre agent). Il calcule la valeur minimax pour notre agent, c'est à dire la valeur minimale de l'état <strong><em>s</em></strong> que les autres joueurs peuvent engendrer, sans connaître leur actions.</p>
+<!-- Rajouter la formulation mathématique en annexe ?-->
+
+<h4 id="description">Description</h4>
+<p>Dans cette description nous supposerons, pour simplifier, que deux joueurs sont adversaires, le joueur A (qui correspond à l'agent que l'on souhaite modéliser) et son adversaire, le joueur B. Notez bien que ce joueur fonctionne avec n joueurs/agents, ce qui correspond à votre cas pour la modélisation de vos agents dans le projet Pac Man (Pac Man &amp; les fantômes).
+Généralement, lorsque l'on décrit cet algorithme, on désigne le joueur A comme <em>le joueur maximisant</em> et son adversaire, le joueur B, comme <em>le joueur minimisant</em>. </p>
+<p>Dans la plupart des jeux, il est souvent irréaliste de pouvoir modéliser tous les états du jeu jusqu'aux états terminaux car le temps d'éxecution de l'algorithme minimax serait trop important. Dans la pratique, on souhaite appliquer minimax sur un arbre suffisamment profond pour que sa performance soit importante, tout en conservant un temps d'éxecution acceptable. Cet arbre est d'autant plus profond que l'on modélise de futurs tours de jeu par joueurs, les <strong>plies</strong>. La <em>figure 3.2</em> ci-dessous représente un exemple d'arbre de recherche simpliste dans lequel sont représentés uniquement 3 états du jeu.</p>
+<p><img alt="Exemple d'un arbre de jeu simpliste" src="https://filedn.eu/lefeldrXcsSFgCcgc48eaLY/images/cours_datascience_IA/Exemple_minimax_3plies.png" title="Figure 3.2" /> <br />
+<strong>Figure 3.2</strong>: Exemple simpliste d'un arbre représentant trois tours de jeu dans un jeu à somme nulle avec deux joueurs. Chaque noeud représente la valeur estimée de la situation de jeu pour notre agent, le joueur A (rectangles gris) et son adversaire, le joueur B (ronds bleu). </p>
+<p>Voyons maintenant les étapes du processus de fonctionnement de l'algorithme Minimax. Celui-ci fonctionne de manière récursive et ascendante:   </p>
+<div class="arithmatex">\[
+Minimax(s) = \left\{
+    \begin{array}{ll}
+        utilité(s) &amp; si~noeud = noeud~terminal \\
+        max_{a\in Actions(s)}~Minimax(Result(s,a)) &amp; si~Joueur(s) = MAX\\
+        min_{a\in Actions(s)}~Minimax(Result(s,a)) &amp; si~Joueur(s) = MIN\\
+    \end{array}
+\right.
+\]</div>
+<ul>
+<li>
+<p>On part des <strong>noeuds terminaux</strong> de l'arbre auquel on attribue une <strong>valeur d'utilité</strong> par une heuristique de fonction d'évaluation. Ensuite, on remonte l'arbre et on évalue les noeuds précédents successivement jusqu'au noeud racine (qui correspond à l'état actuel du jeu).</p>
+</li>
+<li>
+<p>Si les noeuds correspondent à ceux de l'adversaire, c'est à dire le joueur minimisant (ronds bleus), on calcule leur valeurs pour chacun d'eux en <strong><em>minimisant le minimax de chacun des ses noeuds fils</em></strong>. Intuitivement, on cherche à sélectionner <em>le minimum de la pire situation de jeu que pourrait jouer notre agent (joueur A) en réponse au coup du joueur B</em>.  </p>
+</li>
+<li>
+<p>Si les noeuds correspondent à ceux de notre agent, c'est à dire le joueur maximisant (rectangle gris), on calcule leur valeurs pour chacun d'eux en <strong><em>maximisant le minimax de chacun des ses noeuds fils</em></strong>. Intuitivement, on cherche à sélectionner <em>le maximum de la pire situation de jeu que pourrait provoquer l'adversaire (joueur B) en réponse au coup de notre agent</em>.</p>
+</li>
+</ul>
+<p>L'algorithme s'arrête lorsque l'on est remonté jusqu'au noeud racine qui est évalué par l'heuristique de la fonction d'évaluation. En général, <em>la qualité de l'estimation de la valeur des noeuds terminaux </em>et <em>la profondeur de l'arbre</em> détermine la qualité du résultat final (le prochain mouvement à jouer).</p>
+<p>Pour plus de détails interactifs concernant le fonctionnement de Minimax, vous pouvez visionner <a href="https://www.youtube.com/watch?v=l-hh51ncgDI">cette bonne vidéo</a>.</p>
+<h3 id="limitations-de-minimax-ameliorations-possibles">Limitations de minimax &amp; améliorations possibles</h3>
+<p>Dans la plupart des jeux, le nombre de situations de jeu possible est très grand, comme c'est le cas par exemple au échecs et encore plus au go. De plus, le parcours de l'abre par l'algorithme minimax, <strong>le nombre de noeuds à explorer  augmente exponentiellement avec le nombre de tours de jeu (<em>plies</em>)</strong>, ce qui tend à rendre l'algorithme incalculable dans un temps acceptable. C'est pourquoi dans la pratique, on limite très souvent la profondeur de l'arbre à une dizaine de tours de jeu. A titre d'exemple, le minimax utilisé par Deep Blue dans sa victoire contre Kasparov au échec avait une profondeur de 12 tours de jeu.</p>
+<p>En général, une des manières les plus répandues de réduire temps de calcul d'algorithme de parcours d'arbres consiste à "élager", certaines branches de l'arbre qui ne seront ainsi pas visitées. En particulier dans le cas de l'algorithme minimax, il existe un algorithme d'élagage, l'algorithme d'élagage alpha-beta qui donne les <em>mêmes résultats que l'algorithme minimax "naif"</em> mais <em>sans visiter certaines branches qui n'influenceraient pas la décision finale</em>.</p>
+<h3 id="elagage-alpha-beta">Elagage alpha-beta</h3>
+<h4 id="principe-general">Principe général</h4>
+<p>Tout comme minimax, il s'agit d'un algorithme de parcours de graphe en profondeur : à chaque noeud, il n'explore d'abord des fils. Appliqué a minimax, il permet ainsi de parourir le graphe en profondeur tout en élagant certaines branches à ne pas visiter en fonction de deux valeurs <strong><em>α *** et </em></strong>β***. Il à l'avantage de donner les même résultats qu'aurait donné minimax seul, mais avec un temps d'éxecution moindre.</p>
+<p>Tout au long du parours du graphe, l'algorithme calcule les valeurs  <strong><em>α</em></strong> et <strong><em>β</em></strong> définies comme suivant:<br />
+- <strong><em>α</em></strong> =  <strong>plus grande valeur</strong> que l'on peut garantir jusqu'ici (dans la branche en cours de visite)  pour le <strong>joueur maximisant</strong><br />
+- <strong><em>β</em></strong> =  <strong>plus petite valeur</strong> que l'on peut garantir jusqu'ici (dans la branche en cours de visite)  pour le <strong>joueur minimisant</strong>  </p>
+<p>L'algorithme s'éxécute comme suit :<br />
+1. Initialisation des valeurs telles qu'elle correspondent au pire score possible pour chaque joueur (<strong><em>α *** =  -∞ et </em></strong>β *** = +∞)<br />
+2. on met à jour les valeurs <strong><em>α</em></strong> et  <strong><em>β</em></strong> au fur et à mesure de la visite de l'arbre et on élimine les noeuds (et leur branches associées) ayant des valeurs v telles que  <strong><em>α</em></strong> ⩾ v et  <strong><em>β</em></strong> ⩽ v.</p>
+<p><img alt="Exemple d'un arbre alpha-beta" src="https://filedn.eu/lefeldrXcsSFgCcgc48eaLY/images/cours_datascience_IA/alpha-beta-progress_aima_fig5.5.png" title="Figure 3.3" /> <br />
+<strong>Figure 3.3</strong>: Exemple d'application de l'élagage alpha-beta.</p>
+<!--Modifier la figure par celle inspirée de la 5.5 p168 ?-->
+
+<h3 id="jeux-stochastiques">Jeux stochastiques</h3>
+<p>Jusqu'a présent nous avons évoqué uniquement des jeux purement déterministes, dans lesquels aucun élément de l'environnement de tâche n'est dépendant du hasard. Dans beaucoup de situations de la vie réelle certains événements sont imprédictibles. Certains jeux imitent ce caractère imprédicitble, en incluant pas exemple des <strong>élements aléatoires</strong> comme des lancés de dés, on parle alors de <strong>jeux stochastiques</strong>. 
+Dans ce type de jeux, les décisions de notre agent vont donc reposer sur des <em>phénomènes aléatoires qu'il faut modéliser</em>.</p>
+<blockquote>
+<p>Le backgammon est un bon exemple de jeu en partie stochastique puisqu'il nécessite de combiner des talents de prise de décision et une partie de chance. Le but du jeu pour chaque joueur consiste à déplacer des pions sur un plateau et de réussir à tous les sortir du plateau. L'élément aléatoire provient du fait qu'à chaque tour chaque joueur lance des dés qui indiqueront les coups possibles à effectuer pour ce joueur et ce tour. Ainsi lorsque le 1er joueur commence à jouer, il ne connait pas encore les coups légaux pour son adversaire, qui seront déterminés par un lancé de dé. Cette contrainte pose un problème de modélisation des situations de jeu, car nous ne pouvons plus utiliser ici un arbre de jeu simple comme nous l'avons vu précédemment pour le tic-tac-toe ou les échecs. </p>
+</blockquote>
+<h4 id="expectiminimax">Expectiminimax</h4>
+<p>Cet algorithme est une variation de l'algorithme minimax deont principe général consiste à étendre l'arbre utilisé dans l'algorithme minimax en y ajoutant un nouveau type de noeuds, les <strong>noeuds chance</strong> qui vont servir à modéliser les élements aléatoires du jeu. On construit alors un nouveau type d'arbre en alternant des noeuds de type min, max et chance.</p>
+<p>L'algorithme fonctionne de manière similaire à celui de minimax pour le calcul des valeurs des noeuds terminaux et des noeuds min et max. Par contre, pour estimer la valeur de chaque noeud chance on calcule sa <strong>valeur attendue</strong> qui correspond à la somme des valeurs de ses noeuds fils du phénomène, pondéré par leur probabilité d'apparition.
+Mathématiquement, on calcule donc la valeur du noeud chance n par la formule:
+<script type="math/tex; mode=display"> expectiminimax_n = \sum_{c \in C} P_c V_c </script>
+</p>
+<p>Avec C l'ensemble des noeuds fils <em>c</em> du noeud courant n, <span class="arithmatex">\(P_c\)</span>, la probabilité d'occurence de l'évenement représenté par le noeud c,  <span class="arithmatex">\(V_c\)</span> la valeur courante du noeud c (résultat de l'application récursive de la fonction expectiminimax sur les noeuds fils de c) 
+ Le pseudo-code de l'algorithme est donnée dans la partie <strong>Annexes</strong></p>
+<blockquote>
+<p>Pour reprendre l'exemple du backgammon, les joueurs lancent deux dés pour déterminer les coups légaux. Au noeud chance n, la somme des valeur <span class="arithmatex">\(V_c\)</span> est pondérée par les probabilités d'occurence des dés: <span class="arithmatex">\(\frac{1}{36}\)</span> pour les faces identiques et <span class="arithmatex">\(\frac{1}{18}\)</span> pour les autres combinaisons.</p>
+</blockquote>
+<p><img alt="Exemple d'un arbre expectiminimax" src="https://filedn.eu/lefeldrXcsSFgCcgc48eaLY/images/cours_datascience_IA/backgammon-tree_aima_fig5.11.png" title="Figure 3.4" /> <br />
+<strong>Figure 3.4</strong>: Exemple d'application de l'algorithme expectiminimax.</p>
+<!-- Rajouter une figure inspirée de la 5.11 p178 pour le backgammon -->
+
+<h3 id="application-aux-jeux-multi-joueurs">Application aux jeux multi joueurs</h3>
+<p>Attention, dans les exemples présentés ci-dessus, nous avons représenté, par souci de simplicité, des jeux à somme nulle à deux joueurs. Les algorithmes de parcours de graphes que nous avons évoqué plus haut s'appliquent également dans un contexte de jeux multi joueur. C'est dailleurs le cas dans l'environnement de tâche de notre jeu Pac Man: il va falloir que vous modélisiez les actions des plusieurs ennemis sur l'état du jeu. 
+Un piste pour adapter les exemples vus plus haut va consister à ajouter dans vos algorithmes de recherche de graphe d'autres joueurs, les fantômes. De plus vous devrez adapter la fonction d'évaluation pour qu'elle renvoie, à chaque noeud un n-uplet (<em>tuple</em>) de valeurs plutôt qu'une valeur unique.</p>
+<p><img alt="Exemple d'un minimax multi-joueur" src="https://filedn.eu/lefeldrXcsSFgCcgc48eaLY/images/cours_datascience_IA/multipalyer_minimax.png" title="Figure 3.5" /> <br />
+<strong>Figure 3.5</strong>: Exemple d'application de l'algorithme minimax avec 3 joueurs A, B et C.</p>
+<!-- Rajouter une figure inspirée de la 5.4-->
+
+<h3 id="quelques-pistes-de-recherches-pour-votre-projet">Quelques pistes de recherches pour votre projet</h3>
+<ul>
+<li>Faire varier le nombre de tour de jeux (<em>plies</em>) à prendre en compte dans votre arbre.</li>
+<li>Faire varier la fonction d'évaluation utliser.</li>
+<li>Tester les variantes de l'algorithme minimax: l'élagage alpha-beta et expectiminimax </li>
+<li>Utiliser des heuristiques particulières pour modéliser des buts.<blockquote>
+<p>Par exemple, il pourraît être intéressant de tester une <strong>stratégie audacieuse</strong> dans laquelle Pac Man chercherait à s'orienter vers les boules lui permettant de manger les fantômes (ce qui accorde plus de points) en utilisant des algorithmes de recherche du plus court chemin, ou au contraire <strong>stratégie prudente</strong> dans laquelle Pac Man chercherait à rester le plus loin possible des fantômes, ce qui pourrait être utile dans les cas ou les fantômes sont lancé en mode aggressif.</p>
+</blockquote>
+</li>
+<li>Aller explorer d'autres algorithmes plus sophistiqués comme <strong>Iterative deepening</strong>, <strong>SSS*</strong>, <strong>Max<span class="arithmatex">\(^n\)</span> search</strong>, <strong>Monte carlo tree search</strong></li>
+</ul>
+<!--
+Rajouter des infos sur les concepts de good move ordering, killer moves en tant qu'heuristiques 
+-->
+
+<h2 id="lexique-du-chapitre">Lexique du chapitre</h2>
+<h3 id="vocabulaire-de-la-theorie-des-graphes">Vocabulaire de la théorie des graphes</h3>
+<ul>
+<li>Un <a href="https://fr.wikipedia.org/wiki/Graphe_(math%C3%A9matiques_discr%C3%A8tes)"><strong>graphe</strong></a> est un objet mathématique de la théorie des graphes composé de <strong>noeuds</strong>, représentant une valeur et de relations entre eux, les <strong>arêtes</strong>.</li>
+<li>Un <strong>arbre</strong> est un cas particulier de <strong>graphe non orienté, acyclique et connexe.</strong> Il possède des nœuds particuliers qu’on appelle racine (le nœud qui n’a pas de parents) et feuilles (nœuds qui n’ont aucun enfant).</li>
+<li>Un <a href="https://fr.wikipedia.org/wiki/Graphe_orient%C3%A9"><strong>graphe orienté</strong></a> est un graphe dans lequel les noeuds sont associé suivant une direction indiquant le sens de parcours du graphe, représentée par une flèche.</li>
+<li>Contrairement au graphe orienté, le <strong>graphe non orienté</strong> ne possède pas de direction définissant son sens de parcours.</li>
+<li>Un un graphe non orienté G = (S,A) est dit <strong>connexe si</strong>, quels que soient les sommets u et v de S, il existe une chaîne reliant u à v</li>
+<li>Une branche est ensemble fini de noeuds et d'arrêtes (connexes) constituant un sous-graphe.</li>
+<li>Un <a href="https://fr.wikipedia.org/wiki/Arbre_enracin%C3%A9"><strong>arbre enraciné</strong></a> est un <strong>graphe acyclique orienté</strong> possédant une racine unique et dans lequel tous les noeuds sauf la racine possèdent un unique parent. </li>
+<li>Un <a href="https://en.wikipedia.org/wiki/Graph_traversal"><strong>algorithme de parcours de graphe</strong></a> est un type d'algorithme consistant à visiter les noeuds d'un graphe. Il existe plusieurs stratégies différentes de parcours de graphe comme le <strong>parcours en profondeur</strong> ou <strong>le parcours en largeur</strong>.</li>
+</ul>
+<h3 id="vocabulaire-de-la-theorie-des-jeux">Vocabulaire de la théorie des jeux</h3>
+<ul>
+<li><a href="https://fr.wikipedia.org/wiki/Jeu_%C3%A0_somme_nulle"><strong>Un jeu à somme nulle</strong></a> est un jeu dans lequel la somme des gains et des pertes de tous les joueurs est égale à 0. Cela signifie donc que le gain de l'un constitue obligatoirement une perte pour l'autre. 
+Par exemple si l'on définit le gain d'une partie d'échecs comme 1 si on gagne, 0 si la partie est nulle et -1 si on perd, le jeu d'échecs est un jeu à somme nulle. </li>
+<li>Dans un jeu séquentiel à 2 joueur, un <a href="https://en.wikipedia.org/wiki/Ply_(game_theory)"><strong><em>ply</em></strong></a> est un tour joué par un des deux joueurs.</li>
+</ul>
+<h3 id="vocabulaire-de-linformatique-et-de-lalgorithmie">Vocabulaire de l'informatique et de l'algorithmie</h3>
+<ul>
+<li>Dans le domaine de la résolution de problème, une <a href="https://en.wikipedia.org/wiki/Heuristic">heuristique</a> correspond à une solution pratique à un problème, qui n'est pas garantie d'être optimale ou rationnelle mais qui est suffisante pour atteindre rapidement un objectif à court terme. Lorsque l'on ne connaît pas de solution optimale à un problème ou que celle-ci est incalculable, alors les méthodes heuristiques servent souvent améliorer le temps de calcul pour une solution satisfaisante.<blockquote>
+<p>Par exemple, A*, un algorithme utilisé dans le problème de la recherche du plus court chemin utilise une heuristique souvent choisie comme la distance à vol d'oiseau entre la point de départ et la destination. Grâce à l'usage de cette heuristique il est plus rapide que son concurrent qui offre une solution optimale, l'algorithme de Dijkstra.</p>
+</blockquote>
+</li>
+<li>Un <a href="https://fr.wikipedia.org/wiki/Arbre_de_recherche"><strong>arbre de recherche</strong></a> (<em>search tree</em>) est une structure de donnée utilsée pour localiser des neouds ayant des valeurs spécifiques dans un <strong>arbre enraciné</strong> (au sens de la théorie des graphe). Attention à ne pas confondre avec la notion de <em>tree search</em> qui correspond à la classe d'algorithme de parcours de graphe.</li>
+</ul>
+<h2 id="annexes">Annexes:</h2>
+<h3 id="pseudo-code-des-possibles-implementations">Pseudo-code des possibles implémentations</h3>
+<h4 id="algorithme-minimax_1">Algorithme minimax</h4>
+<pre><code>function minimax(node, depth, maximizingPlayer) is
+if depth = 0 or node is a terminal node then
+    return the heuristic value of node
+if maximizingPlayer then
+    value := −∞
+    for each child of node do
+        value := max(value, minimax(child, depth − 1, FALSE))
+    return value
+else (* minimizing player *)
+    value := +∞
+    for each child of node do
+        value := min(value, minimax(child, depth − 1, TRUE))
+    return value
+
+(* Initial call *)
+minimax(origin, depth, TRUE)
+</code></pre>
+<h4 id="elagage">Elagage αβ</h4>
+<pre><code>function alphabeta(node, depth, α, β, maximizingPlayer) is
+if depth = 0 or node is a terminal node then
+    return the heuristic value of node
+if maximizingPlayer then
+    value := −∞
+    for each child of node do
+        value := max(value, alphabeta(child, depth − 1, α, β, FALSE))
+        α := max(α, value)
+        if α ≥ β then
+            break (* β cut-off *)
+    return value
+else
+    value := +∞
+    for each child of node do
+        value := min(value, alphabeta(child, depth − 1, α, β, TRUE))
+        β := min(β, value)
+        if α ≥ β then
+            break (* α cut-off *)
+return value
+
+(* Initial call *)
+alphabeta(origin, depth, −∞, +∞, TRUE)
+</code></pre>
+<p>​        </p>
+<h4 id="expectiminimax_1">Expectiminimax</h4>
+<pre><code>function expectiminimax(node, depth)
+if node is a terminal node or depth = 0
+    return the heuristic value of node
+if the adversary is to play at node
+    // Return value of minimum-valued child node
+    let value := +∞
+    foreach child of node
+        value := min(value, expectiminimax(child, depth-1))
+else if we are to play at node
+    // Return value of maximum-valued child node
+    let value := -∞
+    foreach child of node
+        value := max(value, expectiminimax(child, depth-1))
+else if random event at node
+    // Return weighted average of all child nodes' values
+    let value := 0
+    foreach child of node
+        value := value + (Probability[child] * expectiminimax(child, depth-1))
+return value
+
+(* Initial call *)
+expectiminimax(origin, depth)
+</code></pre>
+<h2 id="sources">Sources</h2>
+<ul>
+<li>Page  wikipedia pour l'<a href="https://en.wikipedia.org/wiki/Minimax#In_general_games">algorithme Minimax</a></li>
+<li>Page wikipedia pour l'<a href="https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning">algorithme d'élagage alpha-beta</a></li>
+<li>Page wikipedia pour l'<a href="https://en.wikipedia.org/wiki/Expectiminimax">algorithme expectiminimax</a></li>
+<li>Chapitres 3 à 5 du livre <a href="http://aima.cs.berkeley.edu/">Artificial Intelligence, A modern approach, 3ème édtition. Sutart Russel &amp; Peter Norwig, <em>Pearson</em>.</a></li>
+<li>Thèse de <em>J,A,M Nijssen</em>, <a href="https://project.dke.maastrichtuniversity.nl/games/files/phd/Nijssen_thesis.pdf">Monte-Carlo tree search for multiplayer games</a></li>
+<li>Chapitre 5 du cours <a href="https://player.slideplayer.com/16/4980256/#">Adevrsarial search and game playing</a>, <em>Olivier schulte</em></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "toc.integrate"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+        <script src="../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
