@@ -6,6 +6,7 @@ install_lecture_tools:
 	pip install mkdocs_exclude
 	pip install pymdown-extensions
 	pip install python-markdown-math
+	pip install pymdown-extensions
 
 	# for jupyter nb
 	pip install nbconvert
@@ -21,7 +22,7 @@ deploy_with_githubpages:
 	mkdocs gh-deploy	
 
 deploy_site_with_kinsta: 
- 	mkdocs build
+	mkdocs build
 	scp -r ./site user@host:/path/to/server/root
 
 
