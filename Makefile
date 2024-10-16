@@ -6,7 +6,7 @@ install_lecture_tools:
 	pip install mkdocs_exclude
 	pip install pymdown-extensions
 	pip install python-markdown-math
-	pip install pymdown-extensions
+	pip install mkdocs-section-index
 
 	# for jupyter nb
 	pip install nbconvert
