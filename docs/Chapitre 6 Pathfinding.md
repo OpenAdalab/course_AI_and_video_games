@@ -415,6 +415,25 @@ Fonction A*(G, start, goal):
 
 Un exemple d’implémentation en Python, par un jeune et brillant participant à un atelier que j’anime bénévolement (n’oubliez pas de lui donner une étoile) : https://github.com/elliott005/A_star
 
+Pour reconstruire les chemins (si on a bien pris soin de créer une table *prédécesseurs*) :
+
+```
+Fonction reconstruire_chemin(précédent, start, goal):
+    chemin ← liste vide
+    courant ← goal
+
+    Tant que courant est différent de null:
+        Ajouter courant au début de chemin
+        courant ← précédent[courant]
+
+    Si chemin[0] est égal à start:
+        Retourner chemin
+    Sinon:
+        Retourner "Aucun chemin trouvé"
+```
+
+
+
 ## Pour aller plus loin
 
 Ce n’est qu’une présentation très simple de l’algorithme A*
