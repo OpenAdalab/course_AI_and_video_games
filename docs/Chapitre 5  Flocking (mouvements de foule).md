@@ -51,9 +51,11 @@ Le site de Pygame Zero consiste en un [tutoriel](https://pgzero-french.readthedo
 
 Lua est un langage interprété dont la syntaxe est très proche du Basic, il est donc facile à lire et à apprendre. Il a été conçu pour être utilisé par des non-spécialistes (à l’origine des ingénieurs de l’industrie pétrolière). Il a donc quelques bizarreries (la plus frappante est que l’index des tables commence à 1 et non à 0) mais ça ne pose pas de grandes difficultés. Il est extrêmement léger (<200ko !!!), il est populaire dans le monde des systèmes embarqués et c’est probablement le langage interprété le plus rapide. Il a toute sa place dans l’écosystème IA ([Torch](http://torch.ch/) est développé en LuaJIT). Son API C est très simple, c’est un outil de scripting qui est devenu un standard dans l’industrie du jeu vidéo : World of Warcraft, Far Cry pour citer les plus populaires, Luau dans Roblox est basé sur Lua. Lua est aussi beaucoup utilisé pour créer des mods. 
 
-[LÖVE2D](https://love2d.org/) est un framework 2D basé sur la [SDL2](https://www.libsdl.org/). Facile à prendre en main ([tutoriels en français](https://love2d.org/wiki/Getting_Started_(Fran%C3%A7ais))) il est utilisé aussi pour le développement de jeux pro (dernier exemple en date : [Balatro](https://www.playbalatro.com/) qui a connu un très grand succès). Pour ne rien gâcher, on peut très facilement générer une version Javascript des jeux en LÖVE2D.
+Son apparente simplicité (syntaxique) ne doit pas cacher le fait qu’il parvient à être à la fois flexible et léger grâce à des mécanismes très puissants (réflexivité, [coroutines](https://fr.wikipedia.org/wiki/Coroutine), [continuations](https://fr.wikipedia.org/wiki/Continuation_(informatique)), etc.) qui lui permettent, même si c’est un langage [procédural](https://fr.wikipedia.org/wiki/Programmation_proc%C3%A9durale) à la base, d’adopter différents paradigmes : programmation objet, [fonctionnelle](https://fr.wikipedia.org/wiki/Programmation_fonctionnelle), [concurrente](), etc. Sur ce sujet, [voici un article](https://www.inf.puc-rio.br/~roberto/docs/ry09-03.pdf) de [Roberto Ierusalimschy](https://en.wikipedia.org/wiki/Roberto_Ierusalimschy), créateur du langage Lua. Pour la programmation objet, je ne peux que vous recommander d’utiliser le module [classic](https://github.com/rxi/classic) très simple, et qui facilite la programmation orientée objet en Lua (constructeur, héritage, métaméthodes pour le polymorphisme, etc.).
 
-Je vous encourage donc à adopter l’un de ces deux framework pour mettre en œuvre les algorithmes et les projets de ce cours.
+[LÖVE2D](https://love2d.org/) est un framework Lua pour la réalisation de jeu 2D basé sur la [SDL2](https://www.libsdl.org/). Facile à prendre en main ([tutoriels en français](https://love2d.org/wiki/Getting_Started_(Fran%C3%A7ais))) il est utilisé aussi pour le développement de jeux pro (dernier exemple en date : [Balatro](https://www.playbalatro.com/) qui a connu un très grand succès). Pour ne rien gâcher, on peut très facilement générer une version Javascript des jeux en LÖVE2D avec [love.js](https://github.com/Davidobot/love.js/).
+
+Je vous encourage donc à adopter l’un de ces deux frameworks (Pygame Zero ou LÖVE2D) pour mettre en œuvre et jouer avec les algorithmes et les projets de ce cours. Vous pourrez aussi trouver des exemples et des tutoriels (en cours de rédaction pour certains) sur le dépôt du Code Club que je co-anime au FabLab de Briançon : https://github.com/orgs/aucoindujeu/repositories
 
 Pour apprendre rapidement le Lua (et d’autres langages) : https://learnxinyminutes.com/docs/fr-fr/lua-fr/
 
@@ -88,9 +90,9 @@ Une base de jeu de la vie avec Pygame Zero (à améliorer) : https://github.com/
 
 ### Les Boids
 
-Qui n’a pas été déjà été hypnotisé par le vol des étourneaux en plein moi de décembre ?
+Qui n’a pas été déjà été hypnotisé par le vol des étourneaux en plein mois de décembre ?
 
-Craig W. Reynolds a proposé en 1986 une simulation de ces vols en nuées d’oiseaux qui a fait la sensation à la [SIGGRAPH](https://s2024.siggraph.org/) l’année suivante. Il a surnommé les agents qui se déplaçaient ainsi des boids (bird - oids) Ces déplacement en nuées très fluides émergent de trois règles très simples :
+[Craig W. Reynolds](https://en.wikipedia.org/wiki/Craig_Reynolds_(computer_graphics)) a proposé en 1986 une simulation de ces vols en nuées d’oiseaux qui a fait la sensation à la [SIGGRAPH](https://s2024.siggraph.org/) l’année suivante. Il a surnommé les agents qui se déplaçaient ainsi des boids (bird - oids) Ces déplacement en nuées très fluides émergent de trois règles très simples :
 
 * séparation : deux boids ne peuvent pas être au même endroit au même moment
 * cohésion : les boids vont avoir tendance à se rapprocher pour former un groupe
@@ -103,14 +105,20 @@ Pour opérer ces règles, on définit pour chaque boid différentes zones (la fo
 * une zone d’orientation (intermédiaire) : si un autre boid est dans cette zone, le boid va le suivre, en alignant sa direction et sa vitesse)
 * le boid sera indifférent à tout ce qui est au delà de la zone d’attraction on peut aussi définir un angle mort derrière le boid auquel il sera également insensible 
 
-On peut conceptualiser le problème également en imaginant que chaque boid se déplace dans une direction et à une vitesse donnée, et 3 forces de nature différente vont s’appliquer à chaque boid : répulsion, attraction ou alignement/centering
+![Zones comportement](./pix/Zones-boid.png)
+
+
+
+On peut conceptualiser le problème également en imaginant que chaque boid se déplace dans une direction et à une vitesse donnée, et 3 forces de nature différente vont s’appliquer à chaque boid : répulsion, attraction ou alignement/centering que l’on va pondérer avec différents paramètres
+
+* Un boid va être attiré par le barycentre de la position des boids qu’il « voit »
+* Un boid va ajuster sa vitesse à la moyenne de la vitesse des boids autour de lui
+* Un boid va garder ses distances avec les boids qui sont « trop proches »
 
 ### Exemple de code
 
 ```lua
--- TO DO
--- o align
---
+
 -- **********************************
 -- Demo variables
 -- *********************************
@@ -147,13 +155,6 @@ function distance(pBoid1, pBoid2)
   return math.sqrt((pBoid1.x - pBoid2.x)^2 + (pBoid1.y - pBoid2.y)^2)
 
 end
-
---[[ Determine if a boid is in the dead angle of the first boid 
-function deadAngle(pBoid1, pBoid2)
-
-  pBoid1 direction = -arctan(vx, vy)
-
-end ]] 
 
 -- Boids 
 function createBoid()
@@ -266,9 +267,6 @@ function love.load()
 
   love.window.setMode(W_WIDTH, W_HEIGHT)
   love.window.setTitle('Reynolds’ Boids')
-  
-  --police = love.graphics.newFont('fonts/police.ttf', 20)
-  --love.graphics.setFont(police)
 
   initDemo()
 
@@ -346,3 +344,13 @@ function love.keypressed(key)
 end
 ```
 
+## Exercices et projet
+
+* se familiariser avec cette démo en l’enrichissant : 
+  * dans un premier temps voir les effets de la modification des paramètres
+  * on peut ajouter de l’interactivité en permettant à l’utilisateur de modifier les paramètres à la volée
+  * on peut aussi faire varier les caractéristiques individuelles des boids pour voir ce qu’il se passe au niveau du groupe
+  * on peut ajouter un prédateur, on peut faire en sorte que les boids soient attirés par le pointeur
+  * on peut désigner quelques boids comme leader (quel effet sur le groupe ?) etc.
+* ce type d’algorithme n’est pas seulement utile pour les être vivants, il peut servir aussi pour des effets de particules
+* je propose [une base d’atelier](https://github.com/Jehadel/Base-Atelier-Cours) (un sprite qui se déplace dans une grille), ajouter des sprites qui suivent le personnages (comme les familiers du magicien, ou des fantômes, ou une « aura » de particules, etc.). Vous pouvez utiliser aussi le framework ou les idées que vous avez !
