@@ -40,7 +40,7 @@ Note : en néerlandais « dij » se prononce « dèï » et non « dij » 
 
 Cet algorithme a été créé pour résoudre un problème en théorie des graphes, « trouver le plus court chemin vers n’importe quel autre point depuis un nœud en particulier », que l’on va lister. Si notre problème dans un jeu est de trouver le plus court chemin entre un point de départ et un point d’arrivée, alors la solution que nous recherchons est de fait incluse dans la solution « du plus court chemin » (en général). C’est absolument idiot et inefficace de procéder ainsi dans le cadre d’un jeu, mais comprendre cet algorithme permet de comprendre **A*** qui est bien plus efficace.
 
-![Graphe pondéré](/media/jean/T7 Shield/Formation/course_AI_and_video_games/docs/pix/Graphe_pondéré.png)
+![Graphe pondéré](./pix/Graphe_pondéré.png)
 
  
 
@@ -119,7 +119,7 @@ lst_non-visités = [B, C, D, E]
 
 À cette étape nous devons choisir un nœud non visité dans la liste des non-visités. Lequel ? Nous choisirons celui qui a la distance la plus courte. C’est D avec comme distance 1.
 
-![Graphe pondéré A visité D nœud courant](/media/jean/T7 Shield/Formation/course_AI_and_video_games/docs/pix/Graphe pondéré_2A-D.png)
+![Graphe pondéré A visité D nœud courant](./pix/Graphe pondéré_2A-D.png)
 
 
 
@@ -158,7 +158,7 @@ lst_non-visités = [B, C, E]
 
 Ici c’est B le nœud non-visité qui a la distance la plus courte. Ce sera notre point de départ.
 
-![Graphe pondéré A et D visités, B nœud courant](/media/jean/T7 Shield/Formation/course_AI_and_video_games/docs/pix/Graphe pondéré_3AD-B.png)
+![Graphe pondéré A et D visités, B nœud courant](./pix/Graphe pondéré_3AD-B.png)
 
 
 
@@ -197,7 +197,7 @@ lst_non-visités = [C, E]
 
 Ici c’est C le nœud non-visité qui a la distance la plus courte. Ce sera notre point de départ.
 
-![Graphe pondéré A, B, C, D visités E nœud courant](/media/jean/T7 Shield/Formation/course_AI_and_video_games/docs/pix/Graphe pondéré_4ADB-C.png)
+![Graphe pondéré A, B, C, D visités E nœud courant](./pix/Graphe pondéré_4ADB-C.png)
 
 #### Étape 2 : distance des voisins
 
@@ -232,7 +232,7 @@ lst_non-visités = [E]
 
 Ne reste plus que E dans la liste des nœuds non-visités.
 
-![Graphe pondéré A, B, C, D visités E nœud courant](/media/jean/T7 Shield/Formation/course_AI_and_video_games/docs/pix/Graphe pondéré_5ADBC-E.png)
+![Graphe pondéré A, B, C, D visités E nœud courant](./pix/Graphe pondéré_5ADBC-E.png)
 
 #### Étape 2 : distance des voisins
 
@@ -320,13 +320,13 @@ L’heuristique dans A* va intervenir au niveau du calcul des poids (distances).
 
 Reprenons le fonctionnement dans un contexte de jeux vidéo, par exemple les déplacement sur une grille (*tileset* ou *bitmap*).
 
-![Grille de jeu](/media/jean/T7 Shield/Formation/course_AI_and_video_games/docs/pix/Jeu_grille.png)
+![Grille de jeu](./pix/Jeu_grille.png)
 
 Imaginons un personnage qui doit être déplacé de la case verte à la case rouge. Les cases blanches sont infranchissables (murs), le déplacement est libre sur les cases noires.
 
 Comment va se dérouler l‘algorithme A* ? 
 
-![Départ algorithme A*](/media/jean/T7 Shield/Formation/course_AI_and_video_games/docs/pix/Jeu_grille_départ.png)
+![Départ algorithme A*](./pix/Jeu_grille_départ.png)
 
 * On va créer en premier une liste où l’on va stocker toutes les cases pour lesquelles on va déterminer si le chemin est susceptible de passer, ou pas : ce sera le but de l’algorithme de le calculer. Cette liste est souvent appelée la liste *open*.
 
@@ -345,13 +345,13 @@ Comment est définie H ? C’est l’estimation du coût du déplacement depuis 
 
 Comment déterminer cette heuristique ? Plusieurs choix sont possibles, des articles sont écrits sur le sujet… vous trouverez ici une [comparaison entre heuristiques](http://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html). Une heuristique dans notre cas sera une manière de calculer la distance entre la case ou le nœud considéré, et le point d’arrivée. Il y a plusieurs manière de calculer une [distance](https://fr.wikipedia.org/wiki/Norme_(math%C3%A9matiques)). La plus familière est la distance euclidienne qui donne la distance « à vol d’oiseau », elle fonctionne plutôt bien car on est presque certain qu’elle sous estime toujours la distance du chemin à parcourir ce qui est une condition d’efficacité de A* (vu qu’on cherche à se rapprocher au maximum de cette distance sous-évaluée, donc la plus courte possible). Mais on peut aussi utiliser ce que l’on appelle la distance de Manhattan, où l’on mesure les distances en ne se déplaçant qu’en ligne droite (imaginer le quadrillage que forment les rues de Manhattan). Pédagogiquement cette méthode a l’avantage d’être facile à visualiser sur une grille, et est aussi très facile à calculer (il suffit de compter le nombre de case parcourues) donc c’est celle-ci que l’on va employer ici. Malheureusement elle a tendance à surestimer la distance à parcourir (vu qu’on ne coupe pas à travers les diagonales), ce qui n’est pas très bon pour l’efficacité de A*, mais on s’en accommodera vu l’avantage pédagogique.
 
-![Exemple distance de Manhattan](/media/jean/T7 Shield/Formation/course_AI_and_video_games/docs/pix/Jeu_grille_Manhattan.png)
+![Exemple distance de Manhattan](./pix/Jeu_grille_Manhattan.png)
 
 On compte 14 cases pour parvenir à l’arrivée en ligne droite, donc une distance de Manhattan de 140.
 
 Voici la somme des poids et les distances de Manhattan (donc les valeurs de H) pour chaque case adjacente au point de départ, qui permettent de calculer la fonction de coût pour chacune de ces cases :
 
-![Calcul poids et heuristique](/media/jean/T7 Shield/Formation/course_AI_and_video_games/docs/pix/Jeu_grille_calcul_poids.png)
+![Calcul poids et heuristique](./pix/Jeu_grille_calcul_poids.png)
 
 * L’étape suivante de l’algorithme est de choisir dans la liste *open* le nœud avec la plus petite fonction de coût (somme des poids + distance Manhattan). Nous constatons que nous avons deux cases dont les fonctions de coût sont identiques. Cela n’est pas bien grave : il est d’usage dans ce cas de choisir le dernier nœud qui a été ajouté à la liste *open*, cela est parfois un meilleur choix surtout quand on approche la fin du parcours, mais ce n’est pas obligatoire (on peut choisir au hasard).
 * On place ce nœud/case dans la liste *closed*
@@ -366,7 +366,7 @@ Sur l’image ci-dessus les cases avec la plus basse fonction de coût sont la c
 * pour la case en dessous du personnage, sa somme de poids actuel est de 10. Idem, si on se déplaçait sur cette case depuis la case courante, la somme de poids serait alors égale à 24 (10 + 14), aucun gain, on ne fait rien non plus.
 * pour la case en bas à gauche du personnage, sa somme de poids est égale à 14 cette fois. Mais si on s‘y déplaçait depuis la case courante, cette somme de poids passerait à 24 aussi ( toujours 10 + 14), on ne fait toujours rien.
 
-![Grille jeu, déplacement étape 2](/media/jean/T7 Shield/Formation/course_AI_and_video_games/docs/pix/Jeu_grille_Etape2.png)
+![Grille jeu, déplacement étape 2](./pix/Jeu_grille_Etape2.png)
 
 Pour les deux cases nouvellement introduites, la case en diagonale haut gauche à une fonction de poids égale à 134 en tout, contre 140 pour la case immédiatement à gauche. Nous nous déplaçons donc sur la première case, en reprenant tout le processus, tout en remarquant à cette occasion que l’on est en train de contourner l’obstacle que constitue la case interdite en haut à gauche du point de départ !
 
@@ -462,7 +462,11 @@ Ce n’est qu’une présentation très simple de l’algorithme A*
 
 * l’algorithme A* est efficace… quand on sait où l’on va ! Si l’on doit explorer une zone de manière extensive, où que l’on sait seulement approximativement où est situé notre but (par exemple une équipe de PNJ à la recherche de ressources dans une zone) Dijkstra peut-être plus performant que lancer répétitivement A* sur des objectifs au hasard… 
 
+* on peut très bien imbriquer les tâches de pathfinding (p. ex. se déplacer entre deux régions, puis explorer une sous-région)
 
+## Exercices et projets
+
+* Implémenter un algorithme de pathfinding (préférentiellement A*). Vous pouvez utiliser la [base d’atelier](https://github.com/Jehadel/Base-Atelier-Cours) (sprite qui se déplace sur une grille). Pour le moment le personnage est contrôlé par les flèches du clavier. Faire en sorte qu’en cliquant sur la case (sélection du personnage) puis sur une autre case (n’importe laquelle), le personnage trouve son chemin entre les deux cases, en évitant les obstacles. Vous pouvez bien sûr utiliser tout autre framework ou base de jeu qui vous inspire.
 
 
 
