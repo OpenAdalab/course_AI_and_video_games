@@ -46,6 +46,9 @@ nav:
   - "Chapitre 2: Tour d'horizon de l'IA dans les JV": "tour_horizon_IA_&_JV.md"
   - "Chapitre 3: Agents intelligents": "agents_intelligents.md"
   - "Chapitre 4: Résolution de problèmes dans les jeux": "resolution_problemes_appliquée_au_jeux.md"
+  - "Chapitre 5: Gestion des mouvements de foule (flocking)": "Chapitre 5  Flocking (mouvements de foule).md"
+  - "Chapitre 6: Pathfinding": "Chapitre 6 Pathfinding.md"
+  - "Chapitre 7: Machines à états finis": "Chapitre 7  Machines à états finis.md"
 
 - Ressources additionnelles:
 #   - Lexique: 
